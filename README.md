@@ -14,13 +14,13 @@ This page documents:
 * How to run them
 * The detailed logic and development of these scripts
 
-==About the scripts==
+## About the scripts
 The scripts fall into '''two categories''':
 * logic/data scripts -- Perl scripts that connect to the III Oracle catalog database, extract data, and process it into the format HT requires, based on specified logic. The user doesn't interact directly with these scripts. 
 * control scripts -- shell scripts used to run/control the logic/data scripts. The user interacts directly with these scripts.
 
-==Control script details==
-===control.sh===
+## Control script details
+### control.sh
 This is the main control script. It:
 * cleans any previous holdings processing files out of the hathi directory on the server
 * runs get_bib_num_lists.pl to produce the text files of candidate bnums
@@ -30,41 +30,41 @@ This is the main control script. It:
 
 This script runs for a long time (about 5.5 hours when run on 2015-05-18). 
 
-===check_progress.sh===
+### check_progress.sh
 control.sh runs in the background for a long time. 
 
 check_progress.sh is used to check on the progress of control.sh. It produces on on-screen list of all the bnum files on which processing has been started, and tells you the percent complete for each bnum file.
 
-===prep_for_hathi.sh===
+### prep_for_hathi.sh
 Used after control.sh is completely finished and all data has been extracted. 
 
 * Combines all the data from the individual holdings_process.pl instances into files placed in holdings_final directory
 * Renames the files that will be submitted, according to Hathi's specifications
 
-===holdings_cleanup.sh===
+### holdings_cleanup.sh
 Used after the final files from holdings_final have been transferred to the Common drive and checked. 
 
 Deletes all the holdings-processing directories and data files produced by the holdings processing workflow. 
 
-==Logic/data script details==
+## Logic/data script details
 From HT's specs: 
 : We would like holdings information for book or book-like materials (e.g., pamphlets, bound newspapers or manuscripts) in print that have OCLC numbers and are cataloged as a single unit. We do not want holdings records either for analyzed articles, or for microform, eBooks, or other non-print materials.
 
-===Tables and views used===
+### Tables and views used
 The '''biblio2base''' view of the database contains the III fixed field data (and limited other information) about each bib record in the catalog. For our purposes, the relevant columns are: bnum, cat date, 2-letter location code, III material type, and III bib_lvl. 
 
 The '''var_fields2''' table stores every variable field of every record in the catalog. Each row in this table is one field from a record. 
 
 The '''item2base''' view contains III fixed field data (and limited other information) about each item record in the catalog. For our purposes, the most relevant columns are: inum, item type, location, copy no., item message (may include d = damaged), status (includes codes relevant to holdings reporting)
 
-===High-level strategy===
+### High-level strategy
 Because of the architecture of the III Oracle DB, a multi-pass approach at identifying the qualifying records and extracting the necessary data is required.
 
 We need to pull some data from the bib record and some from the item record. 
 
 Because there are fewer bib records, and they contain more information about format, we will start with the bib record. 
 
-====get_bib_num_lists.pl script====
+#### get_bib_num_lists.pl script
 * '''Create list(s) of candidate bnums [[Holdings_data_for_HathiTrust#Details_on_further_screening_of_each_bib_record_in_bnum_list_for_inclusion_eligibility|Details on this step]]'''
 ** Pull basic info from biblio2base database view
 ** Create list of bibs that may meet HT's parameters, based on: 
@@ -75,7 +75,7 @@ Because there are fewer bib records, and they contain more information about for
 Running this script produces text files containing up to 200,000 candidate bnums each. The holdings_process.pl script is then run once per bnum file, using the bnum file as input. 
 
 
-====extract_holdings_data_from_bibs.pl script====
+#### extract_holdings_data_from_bibs.pl script
 This script is run on each bnum file output by get_bib_num_lists.pl. It examines each bib record listed. If appropriate, it outputs the HT-requested data to three separate text files (serials, svmonos, and mvmonos). It also appends information on excluded records to an excludes text file. 
 
 Multiple instances of this script can be running concurrently (each using a different bnum file as input). The number of instances that can run concurrently depends on the condition of server on which the processes are running, and what other processes are running at the same time. See the details on the control scripts for how to change the number of concurrent processes. 
@@ -149,15 +149,15 @@ Data on bib records excluded at this point are written to the excludes text file
 
 * '''Write appropriate data on the bib to svmonos or mvmonos text file'''
 
-===Details on development of initial list of candidate bnums===
+### Details on development of initial list of candidate bnums
 * Queries biblio2base
 * Creates txt files
 * Each txt file contains up to 200,000 lines
 * Each line consists of one record's bnum, cat date, and III material type code
-====Get bnums of all bib records where there is a CAT DATE...====
+#### Get bnums of all bib records where there is a CAT DATE...
 If there is no CAT DATE, it is assumed it has not been cataloged, and thus will not have an OCLC#, which is one of HT's requirements.
 
-====...and where the III Material type (mat_type) code is appropriate...====
+#### ...and where the III Material type (mat_type) code is appropriate...
 With the knowledge that III mat_type does not always match the MARC mat_type, and neither of these may accurately reflect the actual material type of the described resource. I know, for instance, that NCC does not code its microforms as such in the III mat_type. 
 
 Mat_Types that are inappropriate indicate this is a material type outside HT's parameters: 
@@ -197,7 +197,7 @@ Appropriate (possibly) codes:
 * p - mixed mat - (includes bound monographs with supplementary materials in other formats -- make sure to just send info about the appropriate items)
 * t - manuscript - (includes theses)
 
-====...and where the bib location is not one of the following obviously inappropriate codes====
+#### ...and where the bib location is not one of the following obviously inappropriate codes
 * dg - Davis Library Microforms
 * dr - Davis Library Bindery
 * dy - Davis Library Equipment
@@ -210,8 +210,8 @@ Appropriate (possibly) codes:
 
 This excludes bib records that have only a single location, which is in the above list. Bib records with multiple locations are included for further analysis.
 
-===Details on further screening of each bib record in bnum list for inclusion eligibility===
-====Query var_fields2 for select MARC fields====
+### Details on further screening of each bib record in bnum list for inclusion eligibility
+#### Query var_fields2 for select MARC fields
 * Leader
 * 001
 * 007
@@ -225,7 +225,7 @@ This excludes bib records that have only a single location, which is in the abov
 * 915
 * 919
 
-====Exclude Documents without Shelves and BROWSE collection bibs====
+#### Exclude Documents without Shelves and BROWSE collection bibs
 Check for "dwsgpo" in the 919 or "BROWSE" in the 915. 
 
 Exclude bib if present. 
@@ -233,7 +233,7 @@ Exclude bib if present.
 * dwsgpo = online gov docs, many otherwise coded as print
 * BROWSE = leased print books -- we do not own them
 
-====Check for OCLC number====
+#### Check for OCLC number
 All included holdings must have an OCLC number. 
 
 * Is there an 001 value?
@@ -244,10 +244,10 @@ All included holdings must have an OCLC number.
 *** 2Y. Yes -- Remove subfield delimiter and OCLC prefix from first subfield a with (OCoLC). This is considered the OCLC number. Continue with next tests.
 *** 2N. No -- Considered to have NO OCLC number. Write bnum and "no OCLC number" to exceptions file and skip to next bib record.
 
-====Check Type of control from leader====
+#### Check Type of control from leader
 If a (Archival), do not include. HT doesn't want to know about archival collections.
 
-====Check bibliographic level from leader====
+#### Check bibliographic level from leader
 Decisions per value:
 
 * a - Monographic component part - Do not include
@@ -258,7 +258,7 @@ Decisions per value:
 * m - Monograph/Item - Treat as monograph
 * s - Serial - Treat as serial
 
-====Check for microform format====
+#### Check for microform format
 Unfortunately, a large number of microform records are not coded as such in the mattype (and other fixed fields). Look for indication that record is for microform. If present, skip to next record.
 
 Look for: 
@@ -268,7 +268,7 @@ Look for:
 
 There's another chance to exclude microforms later, based on item type.
 
-====Check record type from leader====
+#### Check record type from leader
 Decisions per value (logic mirrors that from III material type decisions made in compiling bnum lists).
 
 If decision is "OK," continue on to next test. If decision is "NO," skip to next bib record.
@@ -288,7 +288,7 @@ If decision is "OK," continue on to next test. If decision is "NO," skip to next
 * r - Three-dimensional artifact or naturally occurring object - NO
 * t - Manuscript language material - OK
 
-====Check $a of physical description (300 field)====
+#### Check $a of physical description (300 field)
 If description uses the following term(s), exclude and skip to the next bib: 
 * box
 * item
@@ -298,8 +298,8 @@ If description uses the following term(s), exclude and skip to the next bib:
 
 
 
-====Getting item info====
-=====Initial data from item2base view=====
+#### Getting item info
+##### Initial data from item2base view
 * rec_key (item2base) or link_rec (link_rec2) -- item record number
 * copy_num
 * icode2
@@ -308,8 +308,8 @@ If description uses the following term(s), exclude and skip to the next bib:
 * status
 * imessage
 
-=====Tests for whether this item data is needed=====
-======Item code 2======
+##### Tests for whether this item data is needed
+###### Item code 2
 * - => 'y',
 * n => 'y', #Suppress
 * b => 'y', #Bound with
@@ -320,7 +320,7 @@ If y, go ahead to next test.
 
 If n, skip to next item. Write reason to EXCLUDES.
 
-======Item type======
+###### Item type
 If y, go ahead to next test.
 
 If n, skip to next item. Write reason to EXCLUDES. 
@@ -411,7 +411,7 @@ If n, skip to next item. Write reason to EXCLUDES.
 * 83  => 'y', #3 Hour In Library Use Only
 * 116 => 'n', #Non coop - no items of this type in catalog 2013-09-25, can't evaluate
 
-======Item location======
+###### Item location
 If location matches a value in this list, skip to next item and write reason to EXCLUDES. 
 
 If location doesn't match a value in this list, record item data in item data hash. Query var_fields2 to get volume data and internal notes.
@@ -722,7 +722,7 @@ If location doesn't match a value in this list, record item data in item data ha
 * 'yhdc', #	Latin American Film Library Reference
 * 'yhz', #	Latin American Film Library nonscoped
 
-===Setting holdings status for eligible items===
+### Setting holdings status for eligible items
 '''HT codes'''
 * CH = current holding
 * LM = lost or missing
@@ -754,7 +754,7 @@ Blank item status codes are set to CH.
 * w   => 'WD', #Withdrawn
 * z   => 'LM', #Clms retd
 
-===Categorize eligible bibs as serials, single volume monographs, or multi-volume monographs===
+### Categorize eligible bibs as serials, single volume monographs, or multi-volume monographs
 Separating out the serials is easy. This is based on the blvl in the leader coded as s. 
 
 Separating out the single- and multi-volume monographs is a mess: 
