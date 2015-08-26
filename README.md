@@ -19,29 +19,29 @@ The scripts fall into **two categories**:
 Control script details
 ----------------------
 
-### holdings\_control.sh
+### control.sh
 
 This is the main control script. It:
 
 -   cleans any previous holdings processing files out of the hathi directory on the server
--   runs holdings\_bnums.pl to produce the text files of candidate bnums
--   runs holdings\_process.pl on each candidate bnum text file
+-   runs get\_bib\_num\_lists.pl to produce the text files of candidate bnums
+-   runs extract\_holdings\_data\_from\_bibs.pl on each candidate bnum text file
     -   controls how many instances of the script are running concurrently
     -   makes sure the output of each instance of the script is written to a separate directory
 
 This script runs for a long time (about 5.5 hours when run on 2015-05-18).
 
-### holdings\_progress.sh
+### check\_progress.sh
 
-holdings\_control.sh runs in the background for a long time.
+control.sh runs in the background for a long time.
 
-holdings\_progress.sh is used to check on the progress of holdings\_control.sh. It produces on on-screen list of all the bnum files on which processing has been started, and tells you the percent complete for each bnum file.
+check\_progress.sh is used to check on the progress of control.sh. It produces on on-screen list of all the bnum files on which processing has been started, and tells you the percent complete for each bnum file.
 
-### holdings\_prep\_for\_hathi.sh
+### prep\_for\_hathi.sh
 
-Used after holdings\_control.sh is completely finished and all data has been extracted.
+Used after control.sh is completely finished and all data has been extracted.
 
--   Combines all the data from the individual holdings\_process.pl instances into files placed in holdings\_final directory
+-   Combines all the data from the individual extract\_holdings\_data\_from\_bibs.pl instances into files placed in holdings\_final directory
 -   Renames the files that will be submitted, according to Hathi's specifications
 
 ### holdings\_cleanup.sh
@@ -74,7 +74,7 @@ We need to pull some data from the bib record and some from the item record.
 
 Because there are fewer bib records, and they contain more information about format, we will start with the bib record.
 
-#### holdings\_bnums.pl script
+#### get\_bib\_num\_lists.pl script
 
 -   **Create list(s) of candidate bnums (See below for more details)**
     -   Pull basic info from biblio2base database view
@@ -83,11 +83,11 @@ Because there are fewer bib records, and they contain more information about for
         -   appropriate III material type code
         -   single-value bib location is NOT inappropriate
 
-Running this script produces text files containing up to 200,000 candidate bnums each. The holdings\_process.pl script is then run once per bnum file, using the bnum file as input.
+Running this script produces text files containing up to 200,000 candidate bnums each. The extract\_holdings\_data\_from\_bibs.pl script is then run once per bnum file, using the bnum file as input.
 
-#### holdings\_process.pl script
+#### extract\_holdings\_data\_from\_bibs.pl script
 
-This script is run on each bnum file output by holdings\_bnum.pl. It examines each bib record listed. If appropriate, it outputs the HT-requested data to three separate text files (serials, svmonos, and mvmonos). It also appends information on excluded records to an excludes text file.
+This script is run on each bnum file output by get\_bib\_num\_lists.pl. It examines each bib record listed. If appropriate, it outputs the HT-requested data to three separate text files (serials, svmonos, and mvmonos). It also appends information on excluded records to an excludes text file.
 
 Multiple instances of this script can be running concurrently (each using a different bnum file as input). The number of instances that can run concurrently depends on the condition of server on which the processes are running, and what other processes are running at the same time. See the details on the control scripts for how to change the number of concurrent processes.
 
