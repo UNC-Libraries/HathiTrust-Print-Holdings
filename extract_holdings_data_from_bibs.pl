@@ -4,9 +4,9 @@
 #          should be included in HathiTrust holdings output. If so, outputs HT-required
 #          data to the appropriate file.
 #
-# Usage: perl holdings_process.pl [bnum file] [/dir/to/write/output/]
+# Usage: perl extract_holdings_data_from_bibs.pl [bnum file] [/dir/to/write/output/]
 #
-# Authors: Kristina Spurgin (September 2013 - )
+# Authors: Kristina Spurgin (June 2015 - )
 #
 # Dependencies:
 #    /cgi/includes/connects/afton_iii_iiidba_perl.inc
