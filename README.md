@@ -76,7 +76,7 @@ Because there are fewer bib records, and they contain more information about for
 
 #### holdings\_bnums.pl script
 
--   **Create list(s) of candidate bnums [Details on this step](Holdings_data_for_HathiTrust#Details_on_further_screening_of_each_bib_record_in_bnum_list_for_inclusion_eligibility "wikilink")**
+-   **Create list(s) of candidate bnums (See below for more details)**
     -   Pull basic info from biblio2base database view
     -   Create list of bibs that may meet HT's parameters, based on:
         -   presence of CAT DATE
@@ -93,7 +93,7 @@ Multiple instances of this script can be running concurrently (each using a diff
 
 Because the script appends data to the text files it outputs, instances running concurrently should be writing to files in discrete locations. The result files are concatenated once all bnum files have been processed.
 
--   **Initial assessment of bib record inclusion eligibility [Details on this step](Holdings_data_for_HathiTrust#Details_on_further_screening_of_each_bib_record_in_bnum_list_for_inclusion_eligibility "wikilink")**
+-   **Initial assessment of bib record inclusion eligibility (See below for more details)**
     -   Pulls selected data from var\_fields2 database table
     -   Exclude based on:
         -   presence of certain values in 915 or 919
@@ -116,7 +116,7 @@ Data on bib records excluded at this point are written to the excludes text file
     -   "Serial-ness" is indicated by serial coding in the blvl (in leader)
     -   All HT-requested data on serials can be pulled from the bib record and is written out here without doing processing of item data (very intensive for a lot of serials records!)
 
--   **For each eligible non-serial bib with at least one attached item record, get info on eligible items [Details on this step](Holdings_data_for_HathiTrust#Getting_item_info "wikilink")**
+-   **For each eligible non-serial bib with at least one attached item record, get info on eligible items (See below for more details)**
     -   Query item2base view for basic info on all attached items
     -   Determine eligibility of item based on:
         -   item code 2
@@ -129,7 +129,7 @@ Data on bib records excluded at this point are written to the excludes text file
     -   If item location is NOT trbrs, code as BRT if number of internal item notes containing the string "brittle" (case-insensitive) is greater than 0
     -   If item condition isn't already set to BRT, code it as BRT if item message is coded "d"
 
--   **For each eligible item, set holdings status [Details on this step](Holdings_data_for_HathiTrust#Setting_holdings_status_for_eligible_items "wikilink")**
+-   **For each eligible item, set holdings status (See below for more details)**
 
 -   **For each eligible item, check for presence of volume designator and set accordingly.**
 
