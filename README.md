@@ -8,60 +8,6 @@ To extract this data manually even once a year would be onerous and error-prone.
 
 This page documents the logic and development of these scripts. Once such scripts exist, how to run them will also be documented here.
 
-Holdings compilation workflow permissions/requirements
-------------------------------------------------------
-
-### Server authorizations
-
-Making sure you have the necessary permissions should be a one-time task, but it needs to happen before you can do any of the workflow steps in the next section.
-
-To complete this workflow, you need:
-
--   to be able to access intranet.lib.unc.edu (this is where the scripts live and all work is done)
--   to be part of the ils user group (this gives you permissions to run the scripts and manipulate the files)
-
-Contact L&IT to get permissions if you don't already have them. You may want to point L&IT staff to this page so they can see what you are trying to do.
-
-### Terminal/command line requirements
-
-#### Linux or Apple/Mac
-
-These come with a usable terminal and are probably set up by default. You just need to:
-
--   know how to open your terminal (the program you use to communicate with computers via the command line). Web search on how to do this is your best bet for current instructions for your OS
--   verify you have ssh installed -- actually, we'll assume you do. If you try to log in to the server and get an error message about "ssh: command not found," you need to figure out how to get ssh installed or enabled on your computer.
-
-#### Windows
-
-Windows' own command line terminals (Powershell or CMD) are Windows-specific and can't communicate with a \*nix server without installing fiddly plugins I'm not sure desktop support wants us messing with.
-
-The easiest thing to do is get Putty. Do [a Google search for putty ssh](https://www.google.com/search?q=putty+ssh&ie=utf-8&oe=utf-8) and look for the Download page. You want the latest release version of putty.exe (doesn't need to be installed). Just right-click and save it to somewhere you can find it easily.
-
-Holdings compilation workflow steps
------------------------------------
-
-Text that looks `like this` is what you are supposed to type in at the command line. Hit Enter to send the command.
-
-1.  Open terminal/command line program and connect to server where you'll be doing the work. *Your username and password are your ONYEN and its associated password.* You know you are connected when your command line prompt begins with something like: username@intranet /home/username\>
-    -   Mac/\*nix
-        1.  Open Terminal
-        2.  `ssh username@intranet.lib.unc.edu`
-        3.  Type in your password and hit enter
-    -   Windows
-        1.  Double-click on putty.exe
-        2.  Under "Host Name (or IP address)", enter: intranet.lib.unc.edu
-        3.  Click "Open"
-        4.  At the "login as:" prompt, type your username and hit enter
-        5.  Type in your password and hit enter
-
-2.  Change to the directory where this work is done
-      
-    `cd /scripts/hathi/`
-
-3.  Run the holdings\_control.sh script
-      
-    `nohup sh holdings_control.sh & `
-
 About the scripts
 -----------------
 
@@ -69,16 +15,6 @@ The scripts fall into **two categories**:
 
 -   logic/data scripts -- Perl scripts that connect to the back-end of the catalog, extract data, and process it into the format HT requires, based on specified logic. The user doesn't interact directly with these scripts.
 -   control scripts -- shell scripts used to run/control the logic/data scripts. The user interacts directly with these scripts.
-
-### Where the scripts live
-
-All the scripts are under Git version control at:
-
--   <https://github.com/UNC-Libraries/HathiTrust-Print-Holdings.git>
-
-The production versions live on intranet.lib.unc.edu in:
-
--   /scripts/hathi
 
 Control script details
 ----------------------
