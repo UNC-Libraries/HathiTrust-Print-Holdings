@@ -19,8 +19,7 @@ $ENV{'NLS_LANG'} = 'AMERICAN_AMERICA.AL32UTF8';
 
 my($dbh, $sth, $sql);
 
-$input = '/cgi/includes/connects/afton_iii_iiidba_perl.inc';
-#$input = 'afton_iii_iiidba_perl.inc';
+$input = '/htdocs/connects/afton_iii_iiidba_perl.inc';
 
 open (INFILE, "<$input") || die &mail_error("Can't open hidden file\n");
   while (<INFILE>){

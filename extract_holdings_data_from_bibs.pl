@@ -9,7 +9,7 @@
 # Authors: Kristina Spurgin (June 2015 - )
 #
 # Dependencies:
-#    /cgi/includes/connects/afton_iii_iiidba_perl.inc
+#    /htdocs/connects/afton_iii_iiidba_perl.inc
 #
 # Important usage notes:
 # UTF8 is the biggest factor in this script.  in addition to the use utf8
@@ -474,7 +474,7 @@ $ENV{'NLS_LANG'} = 'AMERICAN_AMERICA.AL32UTF8';
 
 my($db_handle, $statement_handle, $sql);
 
-my $input = '/cgi/includes/connects/afton_iii_iiidba_perl.inc';
+my $input = '/htdocs/connects/afton_iii_iiidba_perl.inc';
 my %mycnf;
 
 open (INFILE, "<$input") || die &mail_error("Can't open hidden file\n");
