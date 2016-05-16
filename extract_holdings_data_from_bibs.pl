@@ -477,7 +477,7 @@ my($db_handle, $statement_handle, $sql);
 my $input = '/htdocs/connects/afton_iii_iiidba_perl.inc';
 my %mycnf;
 
-open (INFILE, "<$input") || die &mail_error("Can't open hidden file\n");
+open (INFILE, "<$input") || die("Can't open hidden file\n");
   while (<INFILE>){
     chomp;
     my @pair = split("=", $_);
@@ -512,7 +512,7 @@ if ($username =~ /^([-\@\w.]+)$/) {
 
 
 $db_handle = DBI->connect("dbi:Oracle:host=$host;sid=$sid", $username, $password)
-        or die &mail_error("Unable to connect: $DBI::errstr");
+        or die("Unable to connect: $DBI::errstr");
 
 # So we don't have to check every DBI call we set RaiseError.
 $db_handle->{RaiseError} = 1;
@@ -541,14 +541,14 @@ $filenum =~ s/hout_([0-9]+)/$1/;
 
 my $log_path = $filenum . ".out";
 
-open(SVMONOS, ">>:utf8", $mono_path) or die &mail_error("Couldn't open $mono_path for output: $!\n");
-open(MVMONOS, ">>:utf8", $mvmono_path) or die &mail_error("Couldn't open $mvmono_path for output: $!\n");
-open(SERIALS, ">>:utf8", $serial_path) or die &mail_error("Couldn't open $serial_path for output: $!\n");
-open(EXCLUDES, ">>:utf8", $exclude_path) or die &mail_error("Couldn't open $exclude_path for output: $!\n");
-open(WARNING, ">>:utf8", $warning_path) or die &mail_error("Couldn't open $warning_path for output: $!\n");
-open(DONE, ">>:utf8", $done_path) or die &mail_error("Couldn't open $done_path for output: $!\n");
-open(STAT, ">>:utf8", $stat_path) or die &mail_error("Couldn't open $stat_path for output: $!\n");
-open(LOGFILE, ">>:utf8", $log_path) or die &mail_error("Couldn't open $log_path for output: $!\n");
+open(SVMONOS, ">>:utf8", $mono_path) or die("Couldn't open $mono_path for output: $!\n");
+open(MVMONOS, ">>:utf8", $mvmono_path) or die("Couldn't open $mvmono_path for output: $!\n");
+open(SERIALS, ">>:utf8", $serial_path) or die("Couldn't open $serial_path for output: $!\n");
+open(EXCLUDES, ">>:utf8", $exclude_path) or die("Couldn't open $exclude_path for output: $!\n");
+open(WARNING, ">>:utf8", $warning_path) or die("Couldn't open $warning_path for output: $!\n");
+open(DONE, ">>:utf8", $done_path) or die("Couldn't open $done_path for output: $!\n");
+open(STAT, ">>:utf8", $stat_path) or die("Couldn't open $stat_path for output: $!\n");
+open(LOGFILE, ">>:utf8", $log_path) or die("Couldn't open $log_path for output: $!\n");
 
 print LOGFILE "$ARGV[0]: Started $start_time\n";
 
@@ -563,7 +563,7 @@ close BNUMS;
 #******************************************
 # Get MARC data for deduped bnum file
 #******************************************
-open (BNUMS, "<$bnum_file") || die &mail_error("Can't open bnum file: $bnum_file\n");
+open (BNUMS, "<$bnum_file") || die("Can't open bnum file: $bnum_file\n");
 
 my $on_bnum = 0;
 
