@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-WORKINGDIR=/scripts/hathi
+WORKINGDIR=/scripts/hathi/holdings
 cd $WORKINGDIR
 
 LOGFILE=$WORKINGDIR/log.txt
@@ -15,7 +15,9 @@ FINISHEDLIST=$WORKINGDIR/finished.list
 # Maximum number of files running at a time
 concurrentFiles=3
 
-
+timestamp() {
+    date +"%T"
+}
 
 echo "$(timestamp): Deleting old bnum input files" >> $LOGFILE
 rm -f hbnumin_*
@@ -54,10 +56,6 @@ echo "$(timestamp): There are $BNUMFILECOUNT bnum files to process." >> $LOGFILE
 echo "$(timestamp): Starting to run holdings processes on bnum files..." >> $LOGFILE
 
 processesCt=0
-
-timestamp() {
-    date +"%T"
-}
 
 process_bnums() {
     (( processesCt++ ))

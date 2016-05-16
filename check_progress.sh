@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-WORKINGDIR=/scripts/hathi
+WORKINGDIR=/scripts/hathi/holdings
 DIRLIST=$WORKINGDIR/dir.list
 cd $WORKINGDIR
 
