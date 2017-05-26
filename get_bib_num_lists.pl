@@ -83,7 +83,7 @@ $file_num = 0;
 #    er - Electronic Resource
 #    es - Electronic Streaming Media
 #    yh - Latin American Film Library 
-$sql = "select b.rec_key, 
+$mil_sql = "select b.rec_key, 
                b.mat_type
         from biblio2base b 
         where 
@@ -92,6 +92,17 @@ $sql = "select b.rec_key,
         b.cat_date is not null
         and 
         b.location not in ('dg   ', 'dr   ', 'dy   ', 'eb   ', 'ed   ', 'es   ', 'yh   ', 'wa   ')";
+
+## the bib location is NOT multi above seems false
+$sql = "select distinct 'b' || rm.record_num || 'a',
+                    bp.material_code
+            from sierra_view.bib_record b
+              inner join sierra_view.bib_record_location bl on bl.bib_record_id = b.id
+              inner join sierra_view.bib_record_property bp on bp.bib_record_id = bl.bib_record_id
+              inner join sierra_view.record_metadata rm on rm.id = b.id
+            where bp.material_code in ('a', 'c', 'e', 'p', 't')
+              and b.cataloging_date_gmt is not null
+              and bl.location_code not in ('dg', 'dr', 'dy', 'eb', 'ed', 'es', 'yh', 'wa')"
 
 $bnum_rows = 0;
 

@@ -893,11 +893,16 @@ close(LOGFILE);
 sub count_brittle_item_notes {
     my $inum = $_[0];
     my $note_count = '';
-    my $note_count_query = "select count(rec_data) 
+    my $mil_note_count_query = "select count(rec_data)
                             from var_fields2
                             where rec_key = '$inum'
                             and iii_tag = 'x'
-                            and upper(rec_data) like '%BRITTLE%'";
+                            and upper(rec_data) like '%BRITTLE%'"; #CONVERTED
+    my $note_count_query = "select count(field_content)
+                            from sierra_view.varfield
+                            where record_id = '$i_id'
+                            and varfield_type_code = 'x'
+                            and upper(field_content) like '%BRITTLE%'";
     my $note_count_handle = $db_handle->prepare($note_count_query);
     $note_count_handle->execute();
     my $note_count_temp;
@@ -912,10 +917,13 @@ sub count_brittle_item_notes {
 sub count_holdings {
     my $bnum = $_[0];
     my $holdings_count = '';
-    my $holdings_count_query = "select count (lr.link_rec) from link_rec2 lr, holdings2base h
+    my $mil_holdings_count_query = "select count (lr.link_rec) from link_rec2 lr, holdings2base h
                             where lr.rec_key = '$bnum'
                             and (lr.link_rec like 'c%')
-                            and lr.link_rec = h.rec_key";
+                            and lr.link_rec = h.rec_key"; #CONVERTED -- are there cases where linking's emssed up?'
+    my $holdings_count_query = "select count (bl.holding_record_id)
+                            from sierra_view.bib_record_holding_record_link bl
+                            where bl.bib_record_id = '$bib_id'";
     my $holdings_count_handle = $db_handle->prepare($holdings_count_query);
     $holdings_count_handle->execute();
     my $holdings_count_temp;
@@ -930,10 +938,13 @@ sub count_holdings {
 sub count_items {
     my $bnum = $_[0];
     my $item_count = '';
-    my $item_count_query = "select count (lr.link_rec) from link_rec2 lr, item2base i
+    my $mil_item_count_query = "select count (lr.link_rec) from link_rec2 lr, item2base i
                             where lr.rec_key = '$bnum'
                             and (lr.link_rec like 'i%')
-                            and lr.link_rec = i.rec_key";
+                            and lr.link_rec = i.rec_key"; #CONVERTED -- are there cases where linking's emssed up?'
+    my $item_count_query = "select count (bl.item_record_id)
+                            from sierra_view.bib_record_item_record_link bl
+                            where bl.bib_record_id = '$bib_id'";
     my $item_count_handle = $db_handle->prepare($item_count_query);
     $item_count_handle->execute();
     my $item_count_temp;
@@ -988,6 +999,8 @@ sub get_basic_bib_data {
     my $iii_tag = '';
     my $marc_tag = '';
     my $rec_data = '';
+    my $bib_id = '';
+    $bib_id = get_sierra_rec_id($rec_key);
 
     my %basic_bib_data = (
                           'bnum' => $bnum,
@@ -1005,7 +1018,7 @@ sub get_basic_bib_data {
                           'b919' => '',
                           );
 
-    my $query = "select iii_tag, marc_tag, rec_data
+    my $mil_query = "select iii_tag, marc_tag, rec_data
                  from var_fields2 where
                  rec_key = '$bnum'
                  and
@@ -1013,7 +1026,16 @@ sub get_basic_bib_data {
                     or marc_tag in ('001', '007', '008', '245', '300', '338', '915', '919')
                     or (marc_tag = '035' and rec_data like '%|a(OCoLC)%')
                     or (marc_tag in ('022', '074') and rec_data like '%|a%')
-                   )";
+                   )"; #CONVERTED
+    my $query =
+        "select varfield_type_code, marc_tag, field_content
+        from sierra_view.varfield
+        where record_id = '$bib_id'
+            and (varfield_type_code = '_'
+                or marc_tag in ('001', '007', '008', '245', '300', '338', '915', '919')
+                or (marc_tag = '035' and field_content like '%|a(OCoLC)%')
+                or (marc_tag in ('022', '074') and field_content like '%|a%')
+            )";
 
     my $query_handle = $db_handle->prepare($query);
     $query_handle->execute();
@@ -1032,10 +1054,25 @@ sub get_basic_bib_data {
     return %basic_bib_data;
 } #end sub get_basic_bib_data
 
+sub get_sierra_rec_id {
+    my $the_key = $_[0];
+    $the_key =~ s/^.//s;
+    my $rec_id_sql = "select id from sierra_view.record_metadata
+                     where record_num = '$the_key' and record_type_code = 'b'";
+    my $rec_id_sth = $db_handle->prepare($rec_id_sql);
+    $rec_id_sth->execute();
+    my $the_id;
+    $rec_id_sth->bind_columns (undef, \$the_id );
+    while ($rec_id_sth->fetch()) {
+    }
+    $rec_id_sth->finish();
+    return $the_id;
+}
+
 sub get_item_data {
     my $bnum = $_[0];
     my %item_hash; #gathered data for all items on this bib
-    my $iquery = "select i.rec_key,
+    my $mil_iquery = "select i.rec_key,
                          i.copy_num,
                          i.icode2,
                          i.i_type,
@@ -1045,11 +1082,24 @@ sub get_item_data {
                   from link_rec2 l,
                        item2base i
                   where l.rec_key = '$bnum'
-                  and i.rec_key = l.link_rec";
+                  and i.rec_key = l.link_rec"; #CONVERTED
+    my $iquery = "select 'i' || rm.record_num,
+                    i.record_id,
+                    i.copy_num,
+                    i.icode2,
+                    i.itype_code_num,
+                    i.location_code,
+                    i.item_status_code,
+                    i.item_message_code
+                from sierra_view.item_record i
+                    inner join sierra_view.bib_record_item_record_link bl on bl.item_record_id = i.id
+                    inner join sierra_view.record_metadata rm on rm.id = i.id
+                where bl.bib_record_id = '$bib_id'";
+
     my $iquery_handle = $db_handle->prepare($iquery);
     $iquery_handle->execute();
-    my ($inum, $copy_num, $icode2, $itype, $ilocation, $istatus, $imessage, $inote, $ivolume) = '';
-    $iquery_handle->bind_columns (undef, \$inum, \$copy_num, \$icode2, \$itype, \$ilocation, \$istatus, \$imessage );
+    my ($inum, $i_id, $copy_num, $icode2, $itype, $ilocation, $istatus, $imessage, $inote, $ivolume) = '';
+    $iquery_handle->bind_columns (undef, \$inum, \$i_id, \$copy_num, \$icode2, \$itype, \$ilocation, \$istatus, \$imessage );
 
   ITEM: while ($iquery_handle->fetch()) {
         #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -1149,11 +1199,16 @@ sub get_item_data {
 sub get_item_volume {
     my $inum = $_[0];
     my $ivol = '';
-    my $ivol_query = "select rec_data
+    my $mil_ivol_query = "select rec_data
                             from var_fields2
                             where rec_key = '$inum'
                             and iii_tag = 'v'
-                            and rownum = 1";
+                            and rownum = 1"; #converted
+    my $ivol_query = "select field_content
+                            from sierra_view.varfield
+                            where record_id = '$i_id'
+                            and varfield_type_code = 'v'
+                            limit 1";
     my $ivol_handle = $db_handle->prepare($ivol_query);
     $ivol_handle->execute();
     my $ivol_t;
