@@ -41,16 +41,7 @@ $file_num = 0;
 #    ed - Documenting the American South
 #    er - Electronic Resource
 #    es - Electronic Streaming Media
-#    yh - Latin American Film Library 
-$mil_sql = "select b.rec_key, 
-               b.mat_type
-        from biblio2base b 
-        where 
-        b.mat_type in ('a', 'c', 'e', 'p', 't') 
-        and 
-        b.cat_date is not null
-        and 
-        b.location not in ('dg   ', 'dr   ', 'dy   ', 'eb   ', 'ed   ', 'es   ', 'yh   ', 'wa   ')";
+#    yh - Latin American Film Library
 
 $sql = "select distinct 'b' || rm.record_num,
                     bp.material_code
