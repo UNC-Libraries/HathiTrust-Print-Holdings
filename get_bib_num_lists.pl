@@ -1,7 +1,6 @@
 #!/usr/bin/perl -w
 
 use DBI;
-use  DBD::Oracle;
 use utf8;
 use locale;
 
@@ -18,48 +17,8 @@ delete @ENV{'ENV', 'BASH_ENV'};
 $ENV{'NLS_LANG'} = 'AMERICAN_AMERICA.AL32UTF8';
 
 my($dbh, $sth, $sql);
+db_connect('sierra');
 
-$input = '/htdocs/connects/afton_iii_iiidba_perl.inc';
-
-open (INFILE, "<$input") || die &mail_error("Can't open hidden file\n");
-  while (<INFILE>){
-    chomp;
-    @pair = split("=", $_);
-    $mycnf{$pair[0]} = $pair[1];
-  }
-
-close(INFILE);
-
-my $host = $mycnf{"host"};
-my $sid = $mycnf{"sid"};
-my $username = $mycnf{"user"};
-my $password = $mycnf{"password"};
-
-# untaint all of the db connection variables
-if ($host =~ /^([-\@\w.]+)$/) {
-     $host=$1;
-} else {     
-     die "Bad data in $host";
-}  
-
-if ($sid =~ /^([-\@\w.]+)$/) {
-     $sid=$1;
-} else {     
-     die "Bad data in $sid";
-}  
-
-if ($username =~ /^([-\@\w.]+)$/) {
-     $username=$1;
-} else {     
-     die "Bad data in $username";
-}  
-
-
-$database_session = DBI->connect("dbi:Oracle:host=$host;sid=$sid", $username, $password)
-        or die &mail_error("Unable to connect: $DBI::errstr");
-
-# So we don't have to check every DBI call we set RaiseError.
-$database_session->{RaiseError} = 1;
 
 #create lists of bnums, broken down into 200K chunks
 
@@ -74,7 +33,7 @@ $file_num = 0;
 #   e - print map (includes atlases)
 #   p - mixed mat - (includes bound monographs with supplementary materials in other formats -- make sure to just send info about the appropriate items)
 #   t - manuscript - (includes theses)
-# And where bib location is NOT multi and is NOT:
+# And where the sole bib location is NOT:
 #    dg - Davis Library Microforms
 #    dr - Davis Library Bindery
 #    dy - Davis Library Equipment
@@ -93,8 +52,7 @@ $mil_sql = "select b.rec_key,
         and 
         b.location not in ('dg   ', 'dr   ', 'dy   ', 'eb   ', 'ed   ', 'es   ', 'yh   ', 'wa   ')";
 
-## the bib location is NOT multi above seems false
-$sql = "select distinct 'b' || rm.record_num || 'a',
+$sql = "select distinct 'b' || rm.record_num,
                     bp.material_code
             from sierra_view.bib_record b
               inner join sierra_view.bib_record_location bl on bl.bib_record_id = b.id
@@ -102,16 +60,16 @@ $sql = "select distinct 'b' || rm.record_num || 'a',
               inner join sierra_view.record_metadata rm on rm.id = b.id
             where bp.material_code in ('a', 'c', 'e', 'p', 't')
               and b.cataloging_date_gmt is not null
-              and bl.location_code not in ('dg', 'dr', 'dy', 'eb', 'ed', 'es', 'yh', 'wa')"
+              and bl.location_code not in ('dg', 'dr', 'dy', 'eb', 'ed', 'es', 'yh', 'wa')";
 
 $bnum_rows = 0;
 
-$statement_handle = $database_session->prepare($sql);
+$sth = $dbh->prepare($sql);
 
-$statement_handle->execute();
+$sth->execute();
 
 my( $rec_key, $mat_type);
-$statement_handle->bind_columns( undef, \$rec_key, \$mat_type);
+$sth->bind_columns( undef, \$rec_key, \$mat_type);
 
 # open file to write output 
 $path = "hbnumin_" . $file_num . ".txt";
@@ -120,7 +78,7 @@ open(OUTFILE, ">:utf8", "$path") or die &mail_error("Couldn't open $path for out
 
 #cycle through results
 
-while ($statement_handle->fetch()) {
+while ($sth->fetch()) {
 
     print OUTFILE "$rec_key\t$mat_type\n";
 	$bnum_rows ++;
@@ -133,10 +91,117 @@ while ($statement_handle->fetch()) {
 		open(OUTFILE, ">:utf8", "$path") or die &mail_error("Couldn't open $path for output: $!\n");
  		$bnum_rows = 0;
             }
-} #end while $statement_handle
+} #end while $sth
 
 
 # close statement handle, database handle, and output file.
-$statement_handle->finish();
+$sth->finish();
 close(OUTFILE);
-$database_session->disconnect();
+$dbh->disconnect();
+
+
+
+# ripped verbatim from args_extract.pl (except for using the fullextract
+# sierra .inc file)
+# extract_holdings_data_from_bibs.pl is using a modified version
+# to pass 'use strict'
+sub db_connect{
+    my $db_mode = $_[0];
+    if ($db_mode eq 'mill') {
+        use  DBD::Oracle;
+        $input = '/htdocs/connects/afton_iii_iiidba_perl.inc';
+
+        open (INFILE, "<$input") || die &mail_error("Can't open Mill DB connects file\n");
+
+        while (<INFILE>) {
+            chomp;
+            @pair = split("=", $_);
+            $mycnf{$pair[0]} = $pair[1];
+        }
+
+        close(INFILE);
+
+        my $host = $mycnf{"host"};
+        my $sid = $mycnf{"sid"};
+        my $username = $mycnf{"user"};
+        my $password = $mycnf{"password"};
+
+        # untaint all of the db connection variables
+        if ($host =~ /^([-\@\w.]+)$/) {
+            $host=$1;
+        } else {
+            die "Bad data in $host";
+        }
+
+        if ($sid =~ /^([-\@\w.]+)$/) {
+            $sid=$1;
+        } else {
+            die "Bad data in $sid";
+        }
+
+        if ($username =~ /^([-\@\w.]+)$/) {
+            $username=$1;
+        } else {
+            die "Bad data in $username";
+        }
+
+
+        $dbh = DBI->connect("dbi:Oracle:host=$host;sid=$sid", $username, $password)
+            or die &mail_error("Unable to connect: $DBI::errstr");
+
+        # So we don't have to check every DBI call we set RaiseError.
+        $dbh->{RaiseError} = 1;
+    } elsif ($db_mode eq 'sierra') {
+        use DBD::Pg;
+        $input = '/scripts/endeca/bnums_test/afton_iii_sierra_perl2.inc';
+
+        open (INFILE, "<$input") || die &mail_error("Can't open Sierra DB connects file\n");
+
+        while (<INFILE>) {
+            chomp;
+            @pair = split("=", $_);
+            $mycnf{$pair[0]} = $pair[1];
+        }
+
+        close(INFILE);
+
+        my $host = $mycnf{"host"};
+        my $port = $mycnf{"port"};
+        my $dbname = $mycnf{"dbname"};
+        my $username = $mycnf{"user"};
+        my $password = $mycnf{"password"};
+
+        # untaint all of the db connection variables
+        if ($host =~ /^([-\@\w.]+)$/) {
+            $host=$1;
+        } else {
+            die "Bad data in $host";
+        }
+
+        if ($port =~ /^([-\@\w.]+)$/) {
+            $port=$1;
+        } else {
+            die "Bad data in $port";
+        }
+
+        if ($dbname =~ /^([-\@\w.]+)$/) {
+            $dbname=$1;
+        } else {
+            die "Bad data in $dbname";
+        }
+
+        if ($username =~ /^([-\@\w.]+)$/) {
+            $username=$1;
+        } else {
+            die "Bad data in $username";
+        }
+
+
+        $dbh = DBI->connect("dbi:Pg:host=$host;port=$port;dbname=$dbname", $username, $password)
+            or die &mail_error("Unable to connect: $DBI::errstr");
+
+        # So we don't have to check every DBI call we set RaiseError.
+        $dbh->{pg_enable_utf8} = 1;
+        $dbh->{RaiseError} = 1;
+    }
+}

@@ -9,7 +9,7 @@
 # Authors: Kristina Spurgin (June 2015 - )
 #
 # Dependencies:
-#    /htdocs/connects/afton_iii_iiidba_perl.inc
+#    /scripts/endeca/bnums_test/afton_iii_sierra_perl2.inc
 #
 # Important usage notes:
 # UTF8 is the biggest factor in this script.  in addition to the use utf8
@@ -25,7 +25,6 @@ use strict;
 use Data::Dumper;
 
 use DBI;
-use  DBD::Oracle;
 use utf8;
 use locale;
 use Net::SSH2;
@@ -461,6 +460,7 @@ my %item_status_decision_lookup = (
      s   => 'LM', #On search
      t   => 'CH', #In transit
      u   => 'CH', #Staff use only
+     v   => 'CH', #At the bindery
      w   => 'WD', #Withdrawn
      z   => 'LM', #Clms retd
 );
@@ -472,50 +472,8 @@ $ENV{'PATH'} = '/bin:/usr/sbin';
 delete @ENV{'ENV', 'BASH_ENV'};
 $ENV{'NLS_LANG'} = 'AMERICAN_AMERICA.AL32UTF8';
 
-my($db_handle, $statement_handle, $sql);
-
-my $input = '/htdocs/connects/afton_iii_iiidba_perl.inc';
-my %mycnf;
-
-open (INFILE, "<$input") || die("Can't open hidden file\n");
-  while (<INFILE>){
-    chomp;
-    my @pair = split("=", $_);
-    $mycnf{$pair[0]} = $pair[1];
-  }
-
-close(INFILE);
-
-my $host = $mycnf{"host"};
-my $sid = $mycnf{"sid"};
-my $username = $mycnf{"user"};
-my $password = $mycnf{"password"};
-
-# untaint all of the db connection variables
-if ($host =~ /^([-\@\w.]+)$/) {
-     $host=$1;
-} else {
-     die "Bad data in $host";
-}
-
-if ($sid =~ /^([-\@\w.]+)$/) {
-     $sid=$1;
-} else {
-     die "Bad data in $sid";
-}
-
-if ($username =~ /^([-\@\w.]+)$/) {
-     $username=$1;
-} else {
-     die "Bad data in $username";
-}
-
-
-$db_handle = DBI->connect("dbi:Oracle:host=$host;sid=$sid", $username, $password)
-        or die("Unable to connect: $DBI::errstr");
-
-# So we don't have to check every DBI call we set RaiseError.
-$db_handle->{RaiseError} = 1;
+my($dbh, $sth, $sql);
+db_connect('sierra');
 
 my $start_time = get_timestamp();
 
@@ -588,11 +546,12 @@ BIB: while (<BNUMS>){
     my $HT_gov_doc = '';
 
     #get basic bib data to start
-    my %basic_bib_data = get_basic_bib_data($bnum);
-    my $ldr = $basic_bib_data{'ldr'};
+    my $bib_id = '';
+    $bib_id = get_sierra_rec_id($bnum);
+    my %basic_bib_data = get_basic_bib_data($bnum, $bib_id);
+    my $ldr_06_07_08 = $basic_bib_data{'ldr_06_07_08'};
     my $b001 = $basic_bib_data{'b001'};
-    my $b007 = $basic_bib_data{'b007'};
-    my $b008 = $basic_bib_data{'b008'};
+    my $b007_00 = $basic_bib_data{'b007_00'};
     my $b022 = $basic_bib_data{'b022'};
     my $b035 = $basic_bib_data{'b035'};
     my $b074 = $basic_bib_data{'b074'};
@@ -638,7 +597,7 @@ BIB: while (<BNUMS>){
     #check for archival control in leader
     #exclude records coded a - HT doesn't want records for archival collections
     #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    my $control_type = substr($ldr, 8, 1);
+    my $control_type = substr($ldr_06_07_08, 2, 1);
     if ($control_type eq 'a') {
         print EXCLUDES "$bnum\t\tArchival control\t\n";
         next BIB;
@@ -649,7 +608,7 @@ BIB: while (<BNUMS>){
     #after exclusion logic, another process comes round and uses this
     # to figure out what HT category to put each included bib in.
     #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    my $blvl = substr($ldr, 7, 1);
+    my $blvl = substr($ldr_06_07_08, 1, 1);
     my $blvl_cat = '';
     my %blvl_decisions = (
         a => 'no',
@@ -687,7 +646,7 @@ BIB: while (<BNUMS>){
         next BIB;
     }
 
-    if ($b007 =~ m/^h/){
+    if ($b007_00 eq 'h'){
         print EXCLUDES "$bnum\t\tMicroform 007\t\n";
         next BIB;
     }
@@ -696,7 +655,7 @@ BIB: while (<BNUMS>){
     #Check record type from leader
     #Returns list: type code, decision
     #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    my $rec_type_code = substr($ldr, 6, 1);
+    my $rec_type_code = substr($ldr_06_07_08, 0, 1);
 
     my %rec_type_decisions = (
         a => 'ok',
@@ -750,9 +709,9 @@ BIB: while (<BNUMS>){
     # Count attached items and holdings records
     #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     my $num_holdings;
-    my $num_items = count_items($bnum);
+    my $num_items = count_items($bib_id);
     if ($num_items == 0) {
-        $num_holdings = count_holdings($bnum);
+        $num_holdings = count_holdings($bib_id);
         if ($num_holdings == 0) { #no items, no holdings
             print EXCLUDES "$bnum\t\tNo items or holdings attached\t\n";
             next BIB;
@@ -789,10 +748,10 @@ BIB: while (<BNUMS>){
     #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     my %item_data;
     if ($num_items > 0) {
-        %item_data = get_item_data($bnum);
+        %item_data = get_item_data($bnum, $bib_id);
 
         #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        # There may be no *elible* item records gathered, so check
+        # There may be no *eligible* item records gathered, so check
         #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         my $num_eligible_items = scalar keys %item_data;
 
@@ -872,7 +831,7 @@ BIB: while (<BNUMS>){
 } #END BIB processing loop
 
 close(BNUMS);
-$db_handle->disconnect();
+$dbh->disconnect();
 close(SVMONOS);
 close(MVMONOS);
 close(SERIALS);
@@ -891,19 +850,19 @@ close(LOGFILE);
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #Counts number of internal notes in item record containing string: brittle
 sub count_brittle_item_notes {
-    my $inum = $_[0];
+    my $i_id = $_[0];
     my $note_count = '';
-    my $mil_note_count_query = "select count(rec_data)
-                            from var_fields2
-                            where rec_key = '$inum'
-                            and iii_tag = 'x'
-                            and upper(rec_data) like '%BRITTLE%'"; #CONVERTED
+#    my $mil_note_count_query = "select count(rec_data)
+#                            from var_fields2
+#                            where rec_key = '$inum'
+#                            and iii_tag = 'x'
+#                            and upper(rec_data) like '%BRITTLE%'"; #CONVERTED
     my $note_count_query = "select count(field_content)
                             from sierra_view.varfield
                             where record_id = '$i_id'
                             and varfield_type_code = 'x'
                             and upper(field_content) like '%BRITTLE%'";
-    my $note_count_handle = $db_handle->prepare($note_count_query);
+    my $note_count_handle = $dbh->prepare($note_count_query);
     $note_count_handle->execute();
     my $note_count_temp;
     $note_count_handle->bind_columns (undef, \$note_count_temp );
@@ -915,16 +874,16 @@ sub count_brittle_item_notes {
 }
 
 sub count_holdings {
-    my $bnum = $_[0];
+    my $bib_id = $_[0];
     my $holdings_count = '';
-    my $mil_holdings_count_query = "select count (lr.link_rec) from link_rec2 lr, holdings2base h
-                            where lr.rec_key = '$bnum'
-                            and (lr.link_rec like 'c%')
-                            and lr.link_rec = h.rec_key"; #CONVERTED -- are there cases where linking's emssed up?'
+#    my $mil_holdings_count_query = "select count (lr.link_rec) from link_rec2 lr, holdings2base h
+#                            where lr.rec_key = '$bnum'
+#                            and (lr.link_rec like 'c%')
+#                            and lr.link_rec = h.rec_key"; #CONVERTED -- are there cases where linking's emssed up?'
     my $holdings_count_query = "select count (bl.holding_record_id)
                             from sierra_view.bib_record_holding_record_link bl
                             where bl.bib_record_id = '$bib_id'";
-    my $holdings_count_handle = $db_handle->prepare($holdings_count_query);
+    my $holdings_count_handle = $dbh->prepare($holdings_count_query);
     $holdings_count_handle->execute();
     my $holdings_count_temp;
     $holdings_count_handle->bind_columns (undef, \$holdings_count_temp );
@@ -936,16 +895,16 @@ sub count_holdings {
 }
 
 sub count_items {
-    my $bnum = $_[0];
+    my $bib_id= $_[0];
     my $item_count = '';
-    my $mil_item_count_query = "select count (lr.link_rec) from link_rec2 lr, item2base i
-                            where lr.rec_key = '$bnum'
-                            and (lr.link_rec like 'i%')
-                            and lr.link_rec = i.rec_key"; #CONVERTED -- are there cases where linking's emssed up?'
+#    my $mil_item_count_query = "select count (lr.link_rec) from link_rec2 lr, item2base i
+#                            where lr.rec_key = '$bnum'
+#                            and (lr.link_rec like 'i%')
+#                            and lr.link_rec = i.rec_key"; #CONVERTED -- are there cases where linking's emssed up?'
     my $item_count_query = "select count (bl.item_record_id)
                             from sierra_view.bib_record_item_record_link bl
                             where bl.bib_record_id = '$bib_id'";
-    my $item_count_handle = $db_handle->prepare($item_count_query);
+    my $item_count_handle = $dbh->prepare($item_count_query);
     $item_count_handle->execute();
     my $item_count_temp;
     $item_count_handle->bind_columns (undef, \$item_count_temp );
@@ -996,18 +955,16 @@ sub decide_item_type {
 
 sub get_basic_bib_data {
     my $bnum = $_[0];
+    my $bib_id = $_[1];
     my $iii_tag = '';
     my $marc_tag = '';
     my $rec_data = '';
-    my $bib_id = '';
-    $bib_id = get_sierra_rec_id($rec_key);
 
     my %basic_bib_data = (
                           'bnum' => $bnum,
-                          'ldr'  => '',
+                          'ldr_06_07_08'  => '',
                           'b001' => '',
-                          'b007' => '',
-                          'b008' => '',
+                          'b007_00' => '',
                           'b022' => '',
                           'b035' => '',
                           'b074' => '',
@@ -1018,26 +975,42 @@ sub get_basic_bib_data {
                           'b919' => '',
                           );
 
-    my $mil_query = "select iii_tag, marc_tag, rec_data
-                 from var_fields2 where
-                 rec_key = '$bnum'
-                 and
-                   (iii_tag = '_'
-                    or marc_tag in ('001', '007', '008', '245', '300', '338', '915', '919')
-                    or (marc_tag = '035' and rec_data like '%|a(OCoLC)%')
-                    or (marc_tag in ('022', '074') and rec_data like '%|a%')
-                   )"; #CONVERTED
+#    my $mil_query = "select iii_tag, marc_tag, rec_data
+#                 from var_fields2 where
+#                 rec_key = '$bnum'
+#                 and
+#                   (iii_tag = '_'
+#                    or marc_tag in ('001', '007', '008', '245', '300', '338', '915', '919')
+#                    or (marc_tag = '035' and rec_data like '%|a(OCoLC)%')
+#                    or (marc_tag in ('022', '074') and rec_data like '%|a%')
+#                   )"; #CONVERTED
     my $query =
         "select varfield_type_code, marc_tag, field_content
         from sierra_view.varfield
         where record_id = '$bib_id'
-            and (varfield_type_code = '_'
-                or marc_tag in ('001', '007', '008', '245', '300', '338', '915', '919')
+            and (marc_tag in ('001', '245', '300', '338', '915', '919')
                 or (marc_tag = '035' and field_content like '%|a(OCoLC)%')
                 or (marc_tag in ('022', '074') and field_content like '%|a%')
-            )";
+            )
+        UNION
+        select '.' AS varfield_type_code, '007_00' AS marc_tag,
+            p00 AS field_content
+        from sierra_view.control_field
+        where record_id = '$bib_id'
+            and control_num = '7'
+        UNION
+        select '_' AS varfield_type_code,
+               '' AS marc_tag,
+               concat(coalesce(record_type_code, ' '),
+                      coalesce(bib_level_code, ' '),
+                      coalesce(control_type_code, ' ')
+               ) AS field_content
+        from sierra_view.leader_field
+        where record_id = '$bib_id'
+        
+        ";
 
-    my $query_handle = $db_handle->prepare($query);
+    my $query_handle = $dbh->prepare($query);
     $query_handle->execute();
     $query_handle->bind_columns (undef, \$iii_tag, \$marc_tag, \$rec_data );
 
@@ -1048,7 +1021,7 @@ sub get_basic_bib_data {
             }
         }
         else {
-            $basic_bib_data{'ldr'} = $rec_data;
+            $basic_bib_data{'ldr_06_07_08'} = $rec_data;
         }
     }
     return %basic_bib_data;
@@ -1059,7 +1032,7 @@ sub get_sierra_rec_id {
     $the_key =~ s/^.//s;
     my $rec_id_sql = "select id from sierra_view.record_metadata
                      where record_num = '$the_key' and record_type_code = 'b'";
-    my $rec_id_sth = $db_handle->prepare($rec_id_sql);
+    my $rec_id_sth = $dbh->prepare($rec_id_sql);
     $rec_id_sth->execute();
     my $the_id;
     $rec_id_sth->bind_columns (undef, \$the_id );
@@ -1071,18 +1044,19 @@ sub get_sierra_rec_id {
 
 sub get_item_data {
     my $bnum = $_[0];
+    my $bib_id = $_[1];
     my %item_hash; #gathered data for all items on this bib
-    my $mil_iquery = "select i.rec_key,
-                         i.copy_num,
-                         i.icode2,
-                         i.i_type,
-                         i.location,
-                         i.status,
-                         i.imessage
-                  from link_rec2 l,
-                       item2base i
-                  where l.rec_key = '$bnum'
-                  and i.rec_key = l.link_rec"; #CONVERTED
+#    my $mil_iquery = "select i.rec_key,
+#                         i.copy_num,
+#                         i.icode2,
+#                         i.i_type,
+#                         i.location,
+#                         i.status,
+#                         i.imessage
+#                  from link_rec2 l,
+#                       item2base i
+#                  where l.rec_key = '$bnum'
+#                  and i.rec_key = l.link_rec"; #CONVERTED
     my $iquery = "select 'i' || rm.record_num,
                     i.record_id,
                     i.copy_num,
@@ -1096,7 +1070,7 @@ sub get_item_data {
                     inner join sierra_view.record_metadata rm on rm.id = i.id
                 where bl.bib_record_id = '$bib_id'";
 
-    my $iquery_handle = $db_handle->prepare($iquery);
+    my $iquery_handle = $dbh->prepare($iquery);
     $iquery_handle->execute();
     my ($inum, $i_id, $copy_num, $icode2, $itype, $ilocation, $istatus, $imessage, $inote, $ivolume) = '';
     $iquery_handle->bind_columns (undef, \$inum, \$i_id, \$copy_num, \$icode2, \$itype, \$ilocation, \$istatus, \$imessage );
@@ -1160,7 +1134,7 @@ sub get_item_data {
             $item_hash{$inum}{condition} = 'BRT';
         }
         else {
-             my $brittle_note_count = count_brittle_item_notes($inum);
+             my $brittle_note_count = count_brittle_item_notes($i_id);
              if  ($brittle_note_count > 0) {
                  $item_hash{$inum}{condition} = 'BRT';
              }
@@ -1187,7 +1161,7 @@ sub get_item_data {
         #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         #Set item volume designator, if present
         #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        my $vol = get_item_volume($inum);
+        my $vol = get_item_volume($i_id);
 
         if ($vol) {
             $item_hash{$inum}{ivolume} = trim($vol);
@@ -1197,19 +1171,19 @@ sub get_item_data {
 } #end get_item_data
 
 sub get_item_volume {
-    my $inum = $_[0];
+    my $i_id = $_[0];
     my $ivol = '';
-    my $mil_ivol_query = "select rec_data
-                            from var_fields2
-                            where rec_key = '$inum'
-                            and iii_tag = 'v'
-                            and rownum = 1"; #converted
+#    my $mil_ivol_query = "select rec_data
+#                            from var_fields2
+#                            where rec_key = '$inum'
+#                            and iii_tag = 'v'
+#                            and rownum = 1"; #converted
     my $ivol_query = "select field_content
                             from sierra_view.varfield
                             where record_id = '$i_id'
                             and varfield_type_code = 'v'
                             limit 1";
-    my $ivol_handle = $db_handle->prepare($ivol_query);
+    my $ivol_handle = $dbh->prepare($ivol_query);
     $ivol_handle->execute();
     my $ivol_t;
     $ivol_handle->bind_columns (undef, \$ivol_t );
@@ -1286,6 +1260,66 @@ $hour = (length($hour) == 1 ? "0" . $hour : $hour );
 $sec = (length($sec) == 1 ? "0" . $sec : $sec );
 
 return "$month/$day/$year $hour:$min:$sec"
+}
+
+# ripped from args_extract.pl and modified to pass 'use strict'
+sub db_connect{
+    my $db_mode = $_[0];
+    if ($db_mode eq 'sierra') {
+        use DBD::Pg;
+        my $input = '/scripts/endeca/bnums_test/afton_iii_sierra_perl2.inc';
+        my %mycnf;
+
+        open (INFILE, "<$input") || die &mail_error("Can't open Sierra DB connects file\n");
+
+        while (<INFILE>) {
+            chomp;
+            my @pair;
+            @pair = split("=", $_);
+            $mycnf{$pair[0]} = $pair[1];
+        }
+
+        close(INFILE);
+
+        my $host = $mycnf{"host"};
+        my $port = $mycnf{"port"};
+        my $dbname = $mycnf{"dbname"};
+        my $username = $mycnf{"user"};
+        my $password = $mycnf{"password"};
+
+        # untaint all of the db connection variables
+        if ($host =~ /^([-\@\w.]+)$/) {
+            $host=$1;
+        } else {
+            die "Bad data in $host";
+        }
+
+        if ($port =~ /^([-\@\w.]+)$/) {
+            $port=$1;
+        } else {
+            die "Bad data in $port";
+        }
+
+        if ($dbname =~ /^([-\@\w.]+)$/) {
+            $dbname=$1;
+        } else {
+            die "Bad data in $dbname";
+        }
+
+        if ($username =~ /^([-\@\w.]+)$/) {
+            $username=$1;
+        } else {
+            die "Bad data in $username";
+        }
+
+
+        $dbh = DBI->connect("dbi:Pg:host=$host;port=$port;dbname=$dbname", $username, $password)
+            or die &mail_error("Unable to connect: $DBI::errstr");
+
+        # So we don't have to check every DBI call we set RaiseError.
+        $dbh->{pg_enable_utf8} = 1;
+        $dbh->{RaiseError} = 1;
+    }
 }
 
 exit;
