@@ -6,7 +6,7 @@ Submitting this data more frequently than annually could be in our interest; sub
 
 To extract this data manually even once a year would be onerous and error-prone. The benefits of submitting the information more frequently further call for an automated process (script(s) that will extract this data from the III Oracle database and mash it into Hathi's required format).
 
-This page documents the logic and development of these scripts. Once such scripts exist, how to run them will also be documented here.
+This page documents the logic and development of these scripts.
 
 About the scripts
 -----------------
@@ -29,7 +29,7 @@ This is the main control script. It:
     -   controls how many instances of the script are running concurrently
     -   makes sure the output of each instance of the script is written to a separate directory
 
-This script runs for a long time (about 5.5 hours when run on 2015-05-18).
+This script runs for a long time (about 5.5 hours when run on 2015-05-18 and 2017-06-06).
 
 ### check\_progress.sh
 
@@ -59,6 +59,7 @@ From HT's specs:
 We would like holdings information for book or book-like materials (e.g., pamphlets, bound newspapers or manuscripts) in print that have OCLC numbers and are cataloged as a single unit. We do not want holdings records either for analyzed articles, or for microform, eBooks, or other non-print materials.
 
 ### Tables and views used
+With Sierra, the information is usually spread across a acouple views, so these historical Oracle tablenames are no longer accurate, but the general description is.
 
 The **biblio2base** view of the database contains the III fixed field data (and limited other information) about each bib record in the catalog. For our purposes, the relevant columns are: bnum, cat date, 2-letter location code, III material type, and III bib\_lvl.
 
@@ -68,7 +69,7 @@ The **item2base** view contains III fixed field data (and limited other informat
 
 ### High-level strategy
 
-Because of the architecture of the III Oracle DB, a multi-pass approach at identifying the qualifying records and extracting the necessary data is required.
+Because of the architecture of the III DB, a multi-pass approach at identifying the qualifying records and extracting the necessary data is required.
 
 We need to pull some data from the bib record and some from the item record.
 
@@ -77,11 +78,11 @@ Because there are fewer bib records, and they contain more information about for
 #### get\_bib\_num\_lists.pl script
 
 -   **Create list(s) of candidate bnums (See below for more details)**
-    -   Pull basic info from biblio2base database view
+    -   Pull basic info from bib views
     -   Create list of bibs that may meet HT's parameters, based on:
         -   presence of CAT DATE
         -   appropriate III material type code
-        -   single-value bib location is NOT inappropriate
+        -   bib location is NOT (single-value and inappropriate)
 
 Running this script produces text files containing up to 200,000 candidate bnums each. The extract\_holdings\_data\_from\_bibs.pl script is then run once per bnum file, using the bnum file as input.
 
@@ -94,7 +95,7 @@ Multiple instances of this script can be running concurrently (each using a diff
 Because the script appends data to the text files it outputs, instances running concurrently should be writing to files in discrete locations. The result files are concatenated once all bnum files have been processed.
 
 -   **Initial assessment of bib record inclusion eligibility (See below for more details)**
-    -   Pulls selected data from var\_fields2 database table
+    -   Pulls selected varfield data from the database
     -   Exclude based on:
         -   presence of certain values in 915 or 919
         -   lack of OCLC number
@@ -117,7 +118,7 @@ Data on bib records excluded at this point are written to the excludes text file
     -   All HT-requested data on serials can be pulled from the bib record and is written out here without doing processing of item data (very intensive for a lot of serials records!)
 
 -   **For each eligible non-serial bib with at least one attached item record, get info on eligible items (See below for more details)**
-    -   Query item2base view for basic info on all attached items
+    -   Query for basic info on all attached items
     -   Determine eligibility of item based on:
         -   item code 2
         -   item type
@@ -150,7 +151,7 @@ Data on bib records excluded at this point are written to the excludes text file
 
 ### Details on development of initial list of candidate bnums
 
--   Queries biblio2base
+-   Queries various bib views
 -   Creates txt files
 -   Each txt file contains up to 200,000 lines
 -   Each line consists of one record's bnum, cat date, and III material type code
@@ -214,16 +215,15 @@ Appropriate (possibly) codes:
 -   yh - Latin American Film Library
 -   wa - Archival materials (Wilson Library)
 
-This excludes bib records that have only a single location, which is in the above list. Bib records with multiple locations are included for further analysis.
+This excludes bib records that have only a single location which is in the above list. Bib records with multiple locations are included for further analysis.
 
 ### Details on further screening of each bib record in bnum list for inclusion eligibility
 
-#### Query var\_fields2 for select MARC fields
+#### Query var\_field for select MARC fields
 
 -   Leader
 -   001
 -   007
--   008
 -   022 (ISSN)
 -   035
 -   074 (GPO Item Number)
@@ -315,9 +315,9 @@ If description uses the following term(s), exclude and skip to the next bib:
 
 #### Getting item info
 
-##### Initial data from item2base view
+##### Initial item data
 
--   rec\_key (item2base) or link\_rec (link\_rec2) -- item record number
+-   item record_num and item record id
 -   copy\_num
 -   icode2
 -   i\_type
@@ -435,7 +435,7 @@ If n, skip to next item. Write reason to EXCLUDES.
 
 If location matches a value in this list, skip to next item and write reason to EXCLUDES.
 
-If location doesn't match a value in this list, record item data in item data hash. Query var\_fields2 to get volume data and internal notes.
+If location doesn't match a value in this list, record item data in item data hash. Query to get volume data and internal notes.
 
 -   'aadaa', \# Art Library CD-ROM
 -   'aadab', \# Art Library Compact Disc
@@ -775,6 +775,7 @@ Blank item status codes are set to CH.
 -   s =\> 'LM', \#On search
 -   t =\> 'CH', \#In transit
 -   u =\> 'CH', \#Staff use only
+    v =\? 'CH', \#At the bindery
 -   w =\> 'WD', \#Withdrawn
 -   z =\> 'LM', \#Clms retd
 
