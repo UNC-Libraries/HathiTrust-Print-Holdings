@@ -4,7 +4,7 @@ Information about the reasons they require this, and the data format they requir
 
 Submitting this data more frequently than annually could be in our interest; submission of information on our lost, damaged, or brittle print holdings may gain us online access to material we currently cannot access.
 
-To extract this data manually even once a year would be onerous and error-prone. The benefits of submitting the information more frequently further call for an automated process (script(s) that will extract this data from the III Oracle database and mash it into Hathi's required format).
+To extract this data manually even once a year would be onerous and error-prone. The benefits of submitting the information more frequently further call for an automated process (script(s) that will extract this data from the III Sierra DNA PostgreSQL database and mash it into Hathi's required format).
 
 This page documents the logic and development of these scripts.
 
