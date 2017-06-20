@@ -429,6 +429,8 @@ If n, skip to next item. Write reason to EXCLUDES.
 -   81 =\> 'y', \#4 Hour in Library Use Only
 -   82 =\> 'n', \#3 Hour In MRC Use Only - probably will be weeded out by format, but they may have books...
 -   83 =\> 'y', \#3 Hour In Library Use Only
+-   84  => 'n', #GPS equipment
+-   85  => 'n', #Relais - temp records for items borrowed through Relais/ILL
 -   116 =\> 'n', \#Non coop - no items of this type in catalog 2013-09-25, can't evaluate
 
 ###### Item location
@@ -438,8 +440,8 @@ If location matches a value in this list, skip to next item and write reason to 
 If location doesn't match a value in this list, record item data in item data hash. Query to get volume data and internal notes.
 
 -   'aadaa', \# Art Library CD-ROM
--   'aadab', \# Art Library Compact Disc
--   'aadac', \# Art Library Computer Disk 3 1/2
+-   'aadab', \#	Art Library Compact Disc
+-   'aadac', \#	Art Library Computer Disk 3 1/2
 -   'aadad', \# Art Library Digital Video Disc
 -   'aadae', \# Art Library Interactive Multimedia
 -   'aadaf', \# Art Library Microfiche
@@ -499,9 +501,10 @@ If location doesn't match a value in this list, record item data in item data ha
 -   'dcyfa', \# Davis Library Reference Federal Internet Resource
 -   'ddcca', \# Davis Library (Non-circulating) Microfilm
 -   'dddae', \# Davis Library Video CD
+-   'ddrel', \# Davis Library Relais
 -   'dg', \# Davis Library Microforms
 -   'dga9', \# Not Yet Determined Microforms
--   'dga', \#@ Staff Use Only Microforms
+-   'dga@', \# Staff Use Only Microforms
 -   'dgaa', \# Staff Use Only Microfilm Master
 -   'dgab', \# Staff Use Only Microfilm Print Master
 -   'dgda', \# Davis Microforms Coll
@@ -521,10 +524,13 @@ If location doesn't match a value in this list, record item data in item data ha
 -   'dgz', \# Davis Library Microforms Non-scoped
 -   'dndaa', \# Storage--Use Request Form Microfiche
 -   'dndab', \# Storage--Use Request Form Microfilm
+-   'dnga', \# Storage(MFM)--Use Request Form
 -   'dngaa', \# Storage(MFM)--Use Request Form Microfiche
 -   'dngab', \# Storage(MFM)--Use Request Form Microfilm
+-   'dngb', \# Storage(MFC)--Use Request Form
 -   'dngba', \# Storage(MFC)--Use Request Form Microfiche
 -   'dngbb', \# Storage(MFC)--Use Request Form Microfilm
+-   'dngc', \# Storage(MFD)--Use Request Form
 -   'dngca', \# Storage(MFD)--Use Request Form Microcard
 -   'dvtaa', \# Davis Library Preservation Microfilm
 -   'dy', \# Davis Library Equipment
@@ -537,23 +543,19 @@ If location doesn't match a value in this list, record item data in item data ha
 -   'ebz', \# Electronic Book Non-Scoped
 -   'ed', \# Documenting the American South
 -   'edas', \# Documenting the American South
--   'edas', \#@ Documenting the American South (staff us only)
+-   'edas@', \# Documenting the American South (staff us only)
 -   'er', \# Electronic Resource
 -   'erda', \# Electronic Resource--Lexis
 -   'erdb', \# Electronic Resource--InfoTrac
 -   'erra', \# Electronic Resource
--   'errd', \# Online Data Set (No restrictions)
+-   'errd', \# Online Data Set
 -   'erri', \# Electronic Resource--Internet
--   'erri', \#@ Electronic Resource--Internet Do not Catalog
--   'errs', \# Online Data Set (Spruce)
--   'errw', \# Online Data Set (Willow)
+-   'erri@', \# Electronic Resource--Internet Do not Catalog
+-   'errs', \# Online Data Set
+-   'errw', \# Online Data Set
 -   'erz', \# Electronic Resources non-scoped
 -   'es', \# Electronic Streaming Media
 -   'estr', \# Electronic Streaming Media
--   'ggla', \# Geological Sciences Library Map Room Vertical File
--   'gglaa', \# Geological Sciences Library Map Room Vertical File Map
--   'gglb', \# Geological Sciences Library Map Room
--   'gglba', \# Geological Sciences Library Map Room Map
 -   'hhga', \# Highway Safety Research Center Library Microfiche Documents
 -   'hhla', \# Highway Safety Research Center Library Audiovisual Collection
 -   'hhya', \# Highway Safety Research Center Library Electronic Access Local
@@ -636,26 +638,14 @@ If location doesn't match a value in this list, record item data in item data ha
 -   'noheb', \# Health Sciences Library Electronic Book
 -   'nohm', \# Health Sciences Library Microfiche
 -   'nohmf', \# Health Sciences Library Microfilm
--   'qqdaa', \# Math/Physics Library CD-ROM
--   'qqdab', \# Math/Physics Library Cassette
--   'qqdac', \# Math/Physics Library Computer Disk 3 1/2
--   'qqdad', \# Math/Physics Library Computer Disk 5 1/2
--   'qqdae', \# Math/Physics Library DVD
--   'qqdaf', \# Math/Physics Library Microfiche
--   'qqdag', \# Math/Physics Library Microfilm
--   'qqdah', \# Math/Physics Library Sound Slide Set
--   'qqdaj', \# Math/Physics Library Videocassette
--   'qqdam', \# Math/Physics Library Videodisc
--   'qqka', \# Math/Physics Library Machine-Readable Data File
--   'qqkaa', \# Math/Physics Library CD-ROM
--   'qqkab', \# Math/Physics Library Computer Disk 3 1/2
--   'qqkac', \# Math/Physics Library DVD
+-   'qqdvd', \# Carolina Women’s Center Collection DVD
 -   'trsc', \# NC Central
 -   'trsd', \# Duke
 -   'trss', \# NC State
 -   'truls', \# Media Resource Center Remote Storage
 -   'uadaa', \# Undergrad Library CD-ROM
 -   'uadac', \# Undergrad Library Interactive Multimedia
+-   'uadah', \# Undergrad Library Microfiche
 -   'uadai', \# Undergrad Library Popular Reading (Entry Level)
 -   'ulbaa', \# Media Resources Center Reserve Videocassette
 -   'ulbab', \# Media Resources Center Reserve Compact Disc
@@ -739,6 +729,7 @@ If location doesn't match a value in this list, record item data in item data ha
 -   'ydka', \# Park Library Posters
 -   'ydla', \# Park Library Multimedia
 -   'ydya', \# Park Library Electronic Resource
+-   'ydyb', \# Park Library (School of Media & Journalism) Equipment
 -   'yhda', \# Latin American Film Library
 -   'yhdc', \# Latin American Film Library Reference
 -   'yhz', \# Latin American Film Library nonscoped
@@ -775,7 +766,7 @@ Blank item status codes are set to CH.
 -   s =\> 'LM', \#On search
 -   t =\> 'CH', \#In transit
 -   u =\> 'CH', \#Staff use only
-    v =\? 'CH', \#At the bindery
+-   v =\> 'CH', \#At the bindery
 -   w =\> 'WD', \#Withdrawn
 -   z =\> 'LM', \#Clms retd
 
