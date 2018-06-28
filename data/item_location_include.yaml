@@ -1,0 +1,3122 @@
+---
+aadaa:
+  val: n
+  desc: Art Library CD-ROM
+aadab:
+  val: n
+  desc: Art Library Compact Disc
+aadac:
+  val: n
+  desc: Art Library Computer Disk 3 1/2
+aadad:
+  val: n
+  desc: Art Library Digital Video Disc
+aadae:
+  val: n
+  desc: Art Library Interactive Multimedia
+aadaf:
+  val: n
+  desc: Art Library Microfiche
+aadag:
+  val: n
+  desc: Art Library Microfilm
+aadah:
+  val: n
+  desc: Art Library Videocassette
+aana:
+  val: n
+  desc: Art Library Vase Room
+aaraa:
+  val: n
+  desc: Art Library Cage Kit
+bbdaa:
+  val: n
+  desc: Science Library Annex Media Collection
+bbdab:
+  val: n
+  desc: Science Library Annex Cassette
+bbdac:
+  val: n
+  desc: Science Library Annex Computer Disk 3 1/2
+bbdad:
+  val: n
+  desc: Science Library Annex Computer Disk 5 1/4
+bbdae:
+  val: n
+  desc: Science Library Annex Interactive Multimedia
+bbdaf:
+  val: n
+  desc: Science Library Annex Microfiche
+bbdag:
+  val: n
+  desc: Science Library Annex Microfilm
+bbdah:
+  val: n
+  desc: Science Library Annex Record
+bbdaj:
+  val: n
+  desc: Science Library Annex Slide
+bbdak:
+  val: n
+  desc: Science Library Annex Videocassette
+bbdfa:
+  val: n
+  desc: Science Library Annex Office CD-ROM
+bbdfb:
+  val: n
+  desc: Science Library Annex Office Computer Disk 3 1/2
+bbdfc:
+  val: n
+  desc: Science Library Annex Office Digital Video Disc
+bbdfd:
+  val: n
+  desc: Science Library Annex Office Interactive Multimedia
+ccdaa:
+  val: n
+  desc: Kenan Science Library CD-ROM
+ccdab:
+  val: n
+  desc: Kenan Science Library Cassette
+ccdac:
+  val: n
+  desc: Kenan Science Library Microcard
+ccdad:
+  val: n
+  desc: Kenan Science Library Microfiche
+ccdae:
+  val: n
+  desc: Kenan Science Library Microfilm
+dccb:
+  val: n
+  desc: Davis Library Service Desk Microfiche
+dccda:
+  val: n
+  desc: Davis Library Reference Microcoard
+dccdb:
+  val: n
+  desc: Davis Library Reference Microfiche
+dccdc:
+  val: n
+  desc: Davis Library Reference Microfilm
+dcce:
+  val: n
+  desc: Davis Library Reference Fascicle File
+dclka:
+  val: n
+  desc: Davis Library Reference Row 10 Microfiche
+dclqa:
+  val: n
+  desc: Davis Library Reference Row 14 Microfiche
+dcpfa:
+  val: n
+  desc: Davis Library Federal Documents CD-ROM
+dcpfb:
+  val: n
+  desc: Davis Library Federal Documents Microfiche
+dcpfc:
+  val: n
+  desc: Davis Library Federal Documents Videocassette
+dcpfi:
+  val: n
+  desc: Davis Federal Documents  Internet Resource
+dcpwa:
+  val: n
+  desc: Davis Library International Documents CD-ROM
+dcpwb:
+  val: n
+  desc: Davis Library International Docs Computer Disk 3 1/2
+dcpwc:
+  val: n
+  desc: Davis Library International Docs Microfiche
+dcya:
+  val: n
+  desc: Davis Library Reference Electronic Resources
+dcyab:
+  val: n
+  desc: Davis Library Reference Electronic Resources CD-ROM
+dcyac:
+  val: n
+  desc: Davis Library Reference Electronic Resources Computer Disk
+dcyad:
+  val: n
+  desc: Davis Library Reference Electronic Resource Computer Disk 3 1/2
+dcyae:
+  val: n
+  desc: Davis Library Reference Electronic Resources Computer Disk 5 1/4
+dcyaf:
+  val: n
+  desc: Davis Library Reference Electronic Resources Interactive Multimedia
+dcyag:
+  val: n
+  desc: Davis Library Reference E-Docs Archive CD-ROM
+dcyb:
+  val: n
+  desc: Davis Library Reference Electronic Archive
+dcyba:
+  val: n
+  desc: Davis Library Reference Electronic Archive Computer Disk
+dcybb:
+  val: n
+  desc: Davis Library Reference Electronic Archive Computer Disk 3 1/2
+dcybc:
+  val: n
+  desc: Davis Library Reference Electronic Archive Computer Disk 5 1/4
+dcybd:
+  val: n
+  desc: Davis Library Reference Electronic Archive Interactive Multimedia
+dcyea:
+  val: n
+  desc: Davis Library Reference E-Docs
+dcyeb:
+  val: n
+  desc: Davis Library Reference E-Docs CD-ROM
+dcyec:
+  val: n
+  desc: Davis Library Reference E-Docs Computer Disk 3 1/2
+dcyef:
+  val: n
+  desc: Davis Library Reference E-Docs Archive
+dcyfa:
+  val: n
+  desc: Davis Library Federal Internet Resource
+ddcca:
+  val: n
+  desc: Davis Library (Non-circulating) Microfilm
+dddae:
+  val: n
+  desc: Davis Library Video CD
+ddrel:
+  val: n
+  desc: TRLN Direct # Relais
+dg:
+  val: n
+  desc: Davis Library Microforms
+dga9:
+  val: n
+  desc: Not Yet Determined Microforms
+dga@:
+  val: n
+  desc: Staff Use Only Microforms
+dgaa:
+  val: n
+  desc: Microfilm Master Negative
+dgab:
+  val: n
+  desc: Microfilm Print Master
+dgda:
+  val: n
+  desc: Davis Microforms Coll
+dgdaa:
+  val: n
+  desc: Davis Library Microfilm
+dgdab:
+  val: n
+  desc: Davis Library Microcard
+dgdac:
+  val: n
+  desc: Davis Library Microfilm Serial
+dgdad:
+  val: n
+  desc: Davis Library Microform
+dgdae:
+  val: n
+  desc: Davis Library Microfiche
+dgdaf:
+  val: n
+  desc: Davis Library Microprint
+dgdb:
+  val: n
+  desc: Davis Library Microforms Folio
+dgdba:
+  val: n
+  desc: Davis Library Microfilm Folio
+dgdbb:
+  val: n
+  desc: Davis Library Microfiche Folio
+dgdc:
+  val: n
+  desc: Davis Library Microforms Folio-2
+dgdca:
+  val: n
+  desc: Davis Library Microfilm Folio-2
+dgdda:
+  val: n
+  desc: Davis Library Microfilm Use Copy
+dgta:
+  val: n
+  desc: Davis Library MNF (Ask at Circ Desk)
+dgz:
+  val: n
+  desc: Davis Library Microforms Non-scoped
+dndaa:
+  val: n
+  desc: Storage--Use Request Form Microfiche
+dndab:
+  val: n
+  desc: Storage--Use Request Form Microfilm
+dnga:
+  val: n
+  desc: Storage(MFM)--Use Request Form
+dngaa:
+  val: n
+  desc: Storage(MFM)--Use Request Form Microfiche
+dngab:
+  val: n
+  desc: Storage(MFM)--Use Request Form Microfilm
+dngb:
+  val: n
+  desc: Storage(MFC)--Use Request Form
+dngba:
+  val: n
+  desc: Storage(MFC)--Use Request Form Microfiche
+dngbb:
+  val: n
+  desc: Storage(MFC)--Use Request Form Microfilm
+dngc:
+  val: n
+  desc: Storage(MFD)--Use Request Form
+dngca:
+  val: n
+  desc: Storage(MFD)--Use Request Form Microcard
+dvtaa:
+  val: n
+  desc: Davis Library Preservation Microfilm
+dy:
+  val: n
+  desc: Davis Library Equipment
+dyca:
+  val: n
+  desc: Davis Library Equipment Storage
+dywa:
+  val: n
+  desc: Davis Library Wireless Card
+dyz:
+  val: n
+  desc: Davis Library Equipment Non-Scoped
+eb:
+  val: n
+  desc: Electronic Book
+ebna:
+  val: n
+  desc: Electronic Book netLibrary
+ebnb:
+  val: n
+  desc: Electronic Book
+ebz:
+  val: n
+  desc: Electronic Book Non-Scoped
+ed:
+  val: n
+  desc: Documenting the American South
+edas:
+  val: n
+  desc: Documenting the American South
+edas@:
+  val: n
+  desc: Documenting the American South (staff us only)
+er:
+  val: n
+  desc: Electronic Resource
+erda:
+  val: n
+  desc: Electronic Resource--Lexis
+erdb:
+  val: n
+  desc: Electronic Resource--InfoTrac
+erra:
+  val: n
+  desc: Electronic Resource
+errd:
+  val: n
+  desc: Online Data Set Data Svcs Website
+erri:
+  val: n
+  desc: Electronic Resource--Internet
+erri@:
+  val: n
+  desc: Electronic Resource--Internet Do not Catalog
+errs:
+  val: n
+  desc: Online Data Set Spruce
+errw:
+  val: n
+  desc: Online Data Set Willow
+erz:
+  val: n
+  desc: Electronic Resources non-scoped
+es:
+  val: n
+  desc: Electronic Streaming Media
+estr:
+  val: n
+  desc: Electronic Streaming Media
+hhga:
+  val: n
+  desc: Highway Safety Research Center Library Microfiche Documents
+hhla:
+  val: n
+  desc: Highway Safety Research Center Library Audiovisual Collection
+hhya:
+  val: n
+  desc: Highway Safety Research Center Library Electronic Access Local
+hhyb:
+  val: n
+  desc: Highway Safety Research Center Library Electronic Access Remote
+jjdaa:
+  val: n
+  desc: Davis Library Maps Collection CD-ROM
+jjdab:
+  val: n
+  desc: Davis Library Maps Collection Computer Disk 3 1/2
+jjdac:
+  val: n
+  desc: Davis Library Maps Collection Computer Disk 5 1/4
+jjdad:
+  val: n
+  desc: Davis Library Maps Collection Digital Video Disc
+jjdae:
+  val: n
+  desc: Davis Library Maps Collection Microfiche
+jjdb:
+  val: n
+  desc: Davis Library Maps Collection Folio
+jjdc:
+  val: n
+  desc: Davis Library Maps Collection Atlases (Lower Level)
+jjdd:
+  val: n
+  desc: Davis Library Maps Collection Folio Oversize
+jjde:
+  val: n
+  desc: Davis Library Maps Collection Folio 2 Oversize
+jjdh:
+  val: n
+  desc: Davis Library Maps Collection Oversize Maps
+jjea:
+  val: n
+  desc: Davis Library Maps Collection Horizontal Files
+jjeb:
+  val: n
+  desc: Davis Library Maps Collection Vertical Files
+jjeba:
+  val: n
+  desc: Davis Library Maps Collection Vertical Files Microfiche
+jjec:
+  val: n
+  desc: Davis Library Maps Collection Lateral File
+jjed:
+  val: n
+  desc: Davis Library Maps Collection Historical Horizontal File
+jjee:
+  val: n
+  desc: Davis Library Maps Collection Historical Vertical File
+jjga:
+  val: n
+  desc: Davis Library Maps Collection Microforms
+jjnb:
+  val: n
+  desc: Davis Library Maps Collection Annex Oversize Maps
+jjnc:
+  val: n
+  desc: Davis Library Maps Collection Annex Oversize Volumes
+jjnd:
+  val: n
+  desc: Davis Library Maps Collection Annex Horizontal Files
+jjne:
+  val: n
+  desc: Davis Library Maps Collection Annex Vertical Files
+jjraa:
+  val: n
+  desc: Davis Library Maps Collection Cage Microfiche
+jjya:
+  val: n
+  desc: Davis Library Maps Collection Electronic Resource
+kdav:
+  val: n
+  desc: Law Library Audio-Visual Documents Collection
+kdcd:
+  val: n
+  desc: Law Library CD-ROM Documents Collection
+kdfc:
+  val: n
+  desc: Law Library Microfiche Documents Collection
+kdvd:
+  val: n
+  desc: Law Library DVD Documents Collection
+knav:
+  val: n
+  desc: Law Library Audio-Visual
+kncd:
+  val: n
+  desc: Law Library CD-ROM
+knfc:
+  val: n
+  desc: Law Library Microfiche
+knfci:
+  val: n
+  desc: Law Library Microfiche Index
+knfm:
+  val: n
+  desc: Law Library Microfilm
+knfmi:
+  val: n
+  desc: Law Library Microfilm Index
+knlv:
+  val: n
+  desc: Law Library Leisure Video
+knsc:
+  val: n
+  desc: Law Library Software Collection
+knvd:
+  val: n
+  desc: Law Library DVD
+kwec:
+  val: n
+  desc: Law Library Electronic Instruction Center
+kwer:
+  val: n
+  desc: Law Library Electronic Resource
+kwer2:
+  val: n
+  desc: Law Library Electronic Book
+kweu:
+  val: n
+  desc: Law Library Computer Lab
+llbaa:
+  val: n
+  desc: Information & Library Science Library Reserve Microfilm
+lldaa:
+  val: n
+  desc: Information & Library Science Library AV Cassette
+lldab:
+  val: n
+  desc: Information & Library Science Library Cassette
+lldad:
+  val: n
+  desc: Information & Library Science Library Computer Disk 3 1/2
+lldae:
+  val: n
+  desc: Information & Library Science Library Computer Disk 5 1/4
+lldaf:
+  val: n
+  desc: Information & Library Science Library Filmstrip
+lldag:
+  val: n
+  desc: Information & Library Science Library Game
+lldah:
+  val: n
+  desc: Information & Library Science Library Kit
+lldaj:
+  val: n
+  desc: Information & Library Science Library Microfiche
+lldak:
+  val: n
+  desc: Information & Library Science Library Microfilm
+lldam:
+  val: n
+  desc: Information & Library Science Library Motion Picture
+lldan:
+  val: n
+  desc: Information & Library Science Library Slide
+lldao:
+  val: n
+  desc: Information & Library Science Library Sound Filmstrip
+lldap:
+  val: n
+  desc: Information & Library Science Library Sound Slide Set
+lldaq:
+  val: n
+  desc: Information & Library Science Library Videocassette
+lldar:
+  val: n
+  desc: Information & Library Science Library Videotape
+llha:
+  val: n
+  desc: Information & Library Science Library Newsletter File
+llla:
+  val: n
+  desc: Information & Library Science Library A/V
+lllaa:
+  val: n
+  desc: Information & Library Science Library AV Cassette
+lllab:
+  val: n
+  desc: Information & Library Science Library AV Compact Disc
+lllac:
+  val: n
+  desc: Information & Library Science Library AV Videocassette
+lllad:
+  val: n
+  desc: Information & Library Science Library AV Cassette
+lllae:
+  val: n
+  desc: Information & Library Science Library A/V Computer Software
+lllaf:
+  val: n
+  desc: Information & Library Science Library AV Videocassette
+mmbaa:
+  val: n
+  desc: Music Library Reserve Videocassette
+mmea:
+  val: n
+  desc: Music Library F-File
+mmga:
+  val: n
+  desc: Music Library Microfilm
+mmgb:
+  val: n
+  desc: Music Library Microfiche
+mmgc:
+  val: n
+  desc: Music Library Microcard
+noha:
+  val: n
+  desc: Health Sciences Library Educational Media
+nohas:
+  val: n
+  desc: Health Sciences Library Slides
+nohbo:
+  val: n
+  desc: HSL Historical Collection Artifacts
+nohbs:
+  val: n
+  desc: HSL Historical Collection Sound Recordings
+nohbt:
+  val: n
+  desc: HSL Historical Collection Visual Media
+nohe:
+  val: n
+  desc: Electronic Resource
+noheb:
+  val: n
+  desc: Health Sciences Library Electronic Book
+nohm:
+  val: n
+  desc: Health Sciences Library Microfiche
+nohmf:
+  val: n
+  desc: Health Sciences Library Microfilm
+nohn:
+  val: n
+  desc: Health Sciences Library Digital Device Collection
+qqdvd:
+  val: n
+  desc: Carolina Women’s Center Collection DVD
+trsc:
+  val: n
+  desc: NC Central
+trsd:
+  val: n
+  desc: Duke
+trss:
+  val: n
+  desc: NC State
+truls:
+  val: n
+  desc: Media Resource Center Remote Storage
+uadaa:
+  val: n
+  desc: Undergrad Library CD-ROM
+uadac:
+  val: n
+  desc: Undergrad Library Interactive Multimedia
+uadah:
+  val: n
+  desc: Undergrad Library Microfiche
+uadai:
+  val: n
+  desc: Undergrad Library Popular Reading (Entry Level)
+uadae:
+  val: n  # no items as of 2018
+  desc: Undergrad Library Microfilm
+ulbaa:
+  val: n
+  desc: Media Resources Center Reserve Videocassette
+ulbab:
+  val: n
+  desc: Media Resources Center Reserve Compact Disc
+ulbr:
+  val: n
+  desc: Media Resources Center Blu-ray Disc
+ulcaa:
+  val: n
+  desc: Media Resources Center Reference CD-ROM
+uldab:
+  val: n
+  desc: Media Resources Center Audiocassette
+uldac:
+  val: n
+  desc: Media Resources Center Cassette
+uldad:
+  val: n
+  desc: Media Resources Center CD-ROM
+uldae:
+  val: n
+  desc: Media Resources Center Compact Disc
+uldaf:
+  val: n
+  desc: Media Resources Center DVD-ROM
+uldag:
+  val: n
+  desc: Media Resources Center Digital Videodisc
+uldah:
+  val: n
+  desc: Media Resources Center Electronic Resource
+uldaj:
+  val: n
+  desc: Media Resources Center Filmstrip
+uldak:
+  val: n
+  desc: Media Resources Center Interactive Multimedia
+uldal:
+  val: n
+  desc: Media Resources Center Library Use Only
+uldam:
+  val: n
+  desc: Media Resources Center Kit
+uldan:
+  val: n
+  desc: Media Resources Center Laser Disc
+uldao:
+  val: n
+  desc: Media Resources Center Motion Picture
+uldap:
+  val: n
+  desc: Media Resources Center Record
+uldaq:
+  val: n
+  desc: Media Resources Center Slides
+uldar:
+  val: n
+  desc: Media Resources Center Sound Cassette
+uldas:
+  val: n
+  desc: Media Resources Center Sound Disc
+uldat:
+  val: n
+  desc: Media Resources Center Sound Filmstrip
+uldau:
+  val: n
+  desc: Media Resources Center Sound Recording
+uldav:
+  val: n
+  desc: Media Resources Center Sound Slide Set
+uldaw:
+  val: n
+  desc: Media Resources Center Video CD
+uldax:
+  val: n
+  desc: Media Resources Center Video Digital Disc
+ulday:
+  val: n
+  desc: Media Resources Center Videocamera
+uldaz:
+  val: n
+  desc: Media Resources Center Videocassette
+uldc:
+  val: n
+  desc: Media Resources Center Equipment
+uldd:
+  val: n
+  desc: Media Resources Center Audiobooks
+vadaa:
+  val: n
+  desc: School of Government Library CD-ROM
+vadab:
+  val: n
+  desc: School of Government Library Microcard/fiche
+wbcc:
+  val: n
+  desc: North Carolina Collection Online
+wbdaa:
+  val: n
+  desc: North Carolina Collection Cassette
+wbdab:
+  val: n
+  desc: North Carolina Collection Game
+wbdac:
+  val: n
+  desc: North Carolina Collection Map Folio
+wbdad:
+  val: n
+  desc: North Carolina Collection Maps
+wbdae:
+  val: n
+  desc: North Carolina Collection Microcard
+wbdaf:
+  val: n
+  desc: North Carolina Collection Microfiche
+wbdag:
+  val: n
+  desc: North Carolina Collection Microfilm
+wbdah:
+  val: n
+  desc: North Carolina Collection Microform
+wbdaj:
+  val: n
+  desc: North Carolina Collection Record
+wbdak:
+  val: n
+  desc: North Carolina Collection Sheet
+wbdam:
+  val: n
+  desc: North Carolina Collection Videocassette
+wbdba:
+  val: n
+  desc: North Carolina Collection Folio Microfilm
+wbga:
+  val: n
+  desc: North Carolina Collection Photo Archives
+wbpaa:
+  val: n
+  desc: North Carolina Collection State Docs Collection Microfiche
+wbpab:
+  val: n
+  desc: North Carolina Collection State Docs Collection Online
+wbwaa:
+  val: n
+  desc: North Carolina Collection Wolfe Microfilm
+wcdg:
+  val: n
+  desc: Rare Book Collection LP Record
+wcdh:
+  val: n
+  desc: Rare Book Collection Audiocassette
+wcdj:
+  val: n
+  desc: Rare Book Collection CD
+wcdk:
+  val: n
+  desc: Rare Book Collection Photos
+wcdl:
+  val: n
+  desc: Rare Book Collection Newspapers
+wcdm:
+  val: n
+  desc: Rare Book Collection DVD
+wcdn:
+  val: n
+  desc: Rare Book Collection Videocassettes
+wcdt:
+  val: n
+  desc: Rare Book Collection Tabloids
+wchq:
+  val: n
+  desc: Rare Book Collection Beats Photos
+wcpe:
+  val: n
+  desc: Rare Book Collection Patton Photos
+wcrp:
+  val: n
+  desc: Rare Book Collection 45RPMs
+xcac:
+  val: n
+  desc: Carolina Population Center Library Electronic Resources Internet CPC
+xcad:
+  val: n
+  desc: Carolina Population Center Library Electronic Resource
+xcea:
+  val: n
+  desc: Carolina Population Center Library Reports, Offprints, Papers
+xceb:
+  val: n
+  desc: Carolina Population Center Library Area Files Cabinets
+yadaa:
+  val: n
+  desc: K-12 International Resource Library Videocassettes
+yccaa:
+  val: n
+  desc: Graduate Funding Information Center Reference CD-ROM
+yccab:
+  val: n
+  desc: Graduate Funding Information Center Reference Cassette
+yccac:
+  val: n
+  desc: Graduate Funding Information Center Reference Kit
+yccad:
+  val: n
+  desc: Graduate Funding Information Center Reference Video
+yccae:
+  val: n
+  desc: Graduate Funding Information Center Reference Videocassette
+yccaf:
+  val: n
+  desc: Graduate Funding Information Center Reference DVD
+yccag:
+  val: n
+  desc: Graduate Funding Information Center Reference Non-Music CD
+ycdaa:
+  val: n
+  desc: Graduate Funding Information Center Cassette
+ycdab:
+  val: n
+  desc: Graduate Funding Information Center Kit
+ycdac:
+  val: n
+  desc: Graduate Funding Information Center Video
+ycdad:
+  val: n
+  desc: Graduate Funding Information Center Videocassette
+ycdae:
+  val: n
+  desc: Graduate Funding Information Center Library CD-Rom
+ycdaf:
+  val: n
+  desc: Graduate Funding Information Center Library DVD
+ycdag:
+  val: n
+  desc: Graduate Funding Information Center Non-Music CD
+ydka:
+  val: n
+  desc: Park Library (School of Media & Journalism) Posters
+ydla:
+  val: n
+  desc: Park Library (School of Media & Journalism) Multimedia
+ydya:
+  val: n
+  desc: Park Library (School of Media & Journalism) Electronic Resource
+ydyb:
+  val: n
+  desc: Park Library (School of Media & Journalism) Equipment
+yh:
+  val: n
+  desc: Latin American Film Library
+yhda:
+  val: n
+  desc: Latin American Film Library
+yhdc:
+  val: n
+  desc: Latin American Film Library Reference
+yhz:
+  val: n
+  desc: Latin American Film Library nonscoped
+aa:
+  val: y
+  desc: Art Library
+aaa9:
+  val: y
+  desc: Not Yet Determined
+aaa@:
+  val: y
+  desc: Staff Use Only
+aab:
+  val: y
+  desc: Art Library Reserve
+aaba:
+  val: y
+  desc: Art Library Reserve
+aaca:
+  val: y
+  desc: Art Library Reference
+aacd:
+  val: y
+  desc: Art Library Ready Reference
+aada:
+  val: y
+  desc: Art Library
+aadd:
+  val: y
+  desc: Art Library Oversize
+aade:
+  val: y
+  desc: Art Library Shelved Flat
+aaha:
+  val: y
+  desc: Art Library Bound Serials
+aaka:
+  val: y
+  desc: Art Library Ackland Print Room
+aama:
+  val: y
+  desc: Art Library Theses
+aaof:
+  val: y
+  desc: Art Library Overflow
+aara:
+  val: y
+  desc: Art Library Cage
+aarb:
+  val: y
+  desc: Art Library Cage Undersize
+aarc:
+  val: y
+  desc: Art Library Cage Oversize
+aard:
+  val: y
+  desc: Art Library Cage Shelved Flat
+aare:
+  val: y
+  desc: Art Library Cage Annex
+aarea:
+  val: y
+  desc: Art Cage Annex 2
+aart:
+  val: y
+  desc: Art Library Artists' Book  Collection
+aarta:
+  val: y
+  desc: Art Library Artists’ Book Collection Undersize
+aartb:
+  val: y
+  desc: Art Library Artists’ Book Collection Oversize
+aartc:
+  val: y
+  desc: Art Library Artists’ Book Collection Shelved Flat
+aaz:
+  val: y
+  desc: Art Library Non-scoped
+bb:
+  val: y
+  desc: Science Library Annex
+bba9:
+  val: y
+  desc: Not Yet Determined
+bba@:
+  val: y
+  desc: Staff Use Only
+bbb:
+  val: y
+  desc: Science Library Annex Reserve
+bbba:
+  val: y
+  desc: Science Library Annex Reserve
+bbcb:
+  val: y
+  desc: Science Library Annex Atlas Stand
+bbda:
+  val: y
+  desc: Science Library Annex Chemistry Reference
+bbdb:
+  val: y
+  desc: Science Library Annex Folio
+bbdc:
+  val: y
+  desc: Science Library Annex Folio-2
+bbdd:
+  val: y
+  desc: Science Library Annex Oversize
+bbde:
+  val: y
+  desc: Science Library Annex Staging Area
+bbdf:
+  val: y
+  desc: Science Library Annex Office
+bbdg:
+  val: y
+  desc: Science Library Annex Geology Section
+bbha:
+  val: y
+  desc: Science Library Annex Serials
+bbla:
+  val: y
+  desc: Science Library Annex
+bbma:
+  val: y
+  desc: Science Library Annex Theses
+bbna:
+  val: y
+  desc: Science Library Annex Overflow Area
+bbra:
+  val: y
+  desc: Science Library Annex Rare Books
+bbrf:
+  val: y
+  desc: Science Library Annex Reference
+bbz:
+  val: y
+  desc: Science Library Annex Non-scoped
+cc:
+  val: y
+  desc: Kenan Science Library
+cca9:
+  val: y
+  desc: Not Yet Determined
+cca@:
+  val: y
+  desc: Staff Use Only
+ccb:
+  val: y
+  desc: Kenan Science Library Reserve
+ccba:
+  val: y
+  desc: Kenan Science Library Reserve
+ccbb:
+  val: y
+  desc: Kenan Science Library Open Reserve
+ccca:
+  val: y
+  desc: Kenan Science Library Reference
+cccb:
+  val: y
+  desc: Kenan Science Library Folio Reference
+ccda:
+  val: y
+  desc: Kenan Science Library
+ccdb:
+  val: y
+  desc: Kenan Science Library Folio
+ccha:
+  val: y
+  desc: Kenan Science Library Journals
+ccma:
+  val: y
+  desc: Kenan Science Library Theses
+ccmb:
+  val: y
+  desc: Kenan Science Library Theses Folio
+ccmc:
+  val: y
+  desc: Kenan Science Library Theses Fol-2
+ccz:
+  val: y
+  desc: Kenan Science Library Non-scoped
+d@:
+  val: y
+  desc: Staff Use only
+d@ac:
+  val: y
+  desc: Staff Use Only Accounting
+d@ad:
+  val: y
+  desc: Staff Use Only Administration
+d@aq:
+  val: y
+  desc: Staff Use Only Acquisitions
+d@cc:
+  val: y
+  desc: Staff Use Only Circulation
+d@cd:
+  val: y
+  desc: Staff Use Only Coll. Dev.
+d@cs:
+  val: y
+  desc: Staff Use Only Serials Cat.
+d@ct:
+  val: y
+  desc: Staff Use Only Cataloging
+d@dk:
+  val: y
+  desc: Staff Use Only Desk
+d@ea:
+  val: y
+  desc: Staff Use Only East Asian
+d@la:
+  val: y
+  desc: Staff Use Only LAIR
+d@pr:
+  val: y
+  desc: Staff Use Only Preservation
+d@re:
+  val: y
+  desc: Staff Use Only Reference
+d@rr:
+  val: y
+  desc: Staff Use Only Reading Room
+d@sr:
+  val: y
+  desc: Staff Use Only Serials
+d@sv:
+  val: y
+  desc: Staff Use Only Slavic
+d@sy:
+  val: y
+  desc: Staff Use Only Systems
+d@tr:
+  val: y
+  desc: Staff Use Only TRLN
+daa9:
+  val: y
+  desc: To Be Determined
+dacir:
+  val: y
+  desc: Davis Circulation Holds Shelf
+dc:
+  val: y
+  desc: Davis Library Reference
+dca9:
+  val: y
+  desc: Not Yet Determined
+dca@:
+  val: y
+  desc: Staff Use Only
+dcca:
+  val: y
+  desc: Davis Library Service Desk
+dccc:
+  val: y
+  desc: Davis Library Reference Atlas Case
+dccd:
+  val: y
+  desc: Davis Library Reference
+dccde:
+  val: y
+  desc: Davis Library Reference Folio
+dccf:
+  val: y
+  desc: Davis Reference Books in Print
+dcda:
+  val: y
+  desc: Davis Library Reference National Bibliographies
+dcea:
+  val: y
+  desc: Davis Library Reference HRAF
+dcka:
+  val: y
+  desc: Davis Library Reference Bay 7
+dckb:
+  val: y
+  desc: Davis Library Reference Bay 8
+dckc:
+  val: y
+  desc: Davis Library Reference Bay 9
+dckd:
+  val: y
+  desc: Davis Library Reference Bay 10
+dcke:
+  val: y
+  desc: Davis Library Reference Bay 11
+dcla:
+  val: y
+  desc: Davis Library Reference Row 1
+dclb:
+  val: y
+  desc: Davis Library Reference Row 2
+dclc:
+  val: y
+  desc: Davis Library Reference Row 3
+dcld:
+  val: y
+  desc: Davis Library Reference Row 4
+dcle:
+  val: y
+  desc: Davis Library Reference Row 5
+dclf:
+  val: y
+  desc: Davis Library Reference Row 6
+dclg:
+  val: y
+  desc: Davis Library Reference Row 7
+dclh:
+  val: y
+  desc: Davis Library Reference Row 8
+dclj:
+  val: y
+  desc: Davis Library Reference Row 9
+dclk:
+  val: y
+  desc: Davis Library Reference Row 10
+dclm:
+  val: y
+  desc: Davis Library Reference Row 11
+dcln:
+  val: y
+  desc: Davis Library Reference Row 12
+dclp:
+  val: y
+  desc: Davis Library Reference Row 13
+dclq:
+  val: y
+  desc: Davis Library Reference Row 14
+dclr:
+  val: y
+  desc: Davis Library Reference Row 15
+dcls:
+  val: y
+  desc: Davis Library Reference Row 16
+dclt:
+  val: y
+  desc: Davis Library Reference Row 17
+dclv:
+  val: y
+  desc: Davis Library Reference Row 18
+dclw:
+  val: y
+  desc: Davis Library Reference Row 19a
+dclwa:
+  val: y
+  desc: Davis Library Reference Row 19b
+dclx:
+  val: y
+  desc: Davis Library Reference Row 20
+dcma:
+  val: y
+  desc: Davis Library Reference Wall Shelf 1
+dcmb:
+  val: y
+  desc: Davis Library Reference Wall Shelf 2
+dcmc:
+  val: y
+  desc: Davis Library Reference Wall Shelf 3
+dcmd:
+  val: y
+  desc: Davis Library Reference Wall Shelf 4
+dcme:
+  val: y
+  desc: Davis Library Reference Wall Shelf 5
+dcmf:
+  val: y
+  desc: Davis Library Reference Wall Shelf 6
+dcmg:
+  val: y
+  desc: Davis Library Reference Wall Shelf 7
+dcmh:
+  val: y
+  desc: Davis Library Reference Wall Shelf 8
+dcmj:
+  val: y
+  desc: Davis Library Reference Wall Shelf 9
+dcmk:
+  val: y
+  desc: Davis Library Reference Wall Shelf 10
+dcmm:
+  val: y
+  desc: Davis Library Reference Wall Shelf 11
+dcmn:
+  val: y
+  desc: Davis Library Reference Wall Shelf 12
+dcmp:
+  val: y
+  desc: Davis Library Reference Wall Shelf 13
+dcmq:
+  val: y
+  desc: Davis Library Reference Wall Shelf 14
+dcmr:
+  val: y
+  desc: Davis Library Reference Wall Shelf 15
+dcms:
+  val: y
+  desc: Davis Library Reference Wall Shelf 16
+dcmt:
+  val: y
+  desc: Davis Library Reference Wall Shelf 17
+dcmv:
+  val: y
+  desc: Davis Library Reference Wall Shelf 18
+dcmw:
+  val: y
+  desc: Davis Library Reference Wall Shelf 19
+dcp9:
+  val: y
+  desc: Not Yet Determined
+dcpf:
+  val: y
+  desc: Davis Library Federal Documents
+dcpf9:
+  val: y
+  desc: Not yet determined (Fed Docs)
+dcpf@:
+  val: y
+  desc: Davis Library Federal Documents DNC
+dcps:
+  val: y
+  desc: Davis Library State Documents
+dcps9:
+  val: y
+  desc: Not Yet Determined (State Docs)
+dcps@:
+  val: y
+  desc: Davis Library State Documents DNC
+dcpw:
+  val: y
+  desc: Davis Library International Documents
+dcpw9:
+  val: y
+  desc: Not yet determined(Intl Docs)
+dcpw@:
+  val: y
+  desc: Davis Library International Documents DNC
+dcz:
+  val: y
+  desc: Davis Library Reference Non-scoped
+dd:
+  val: y
+  desc: Davis (Main) Library
+dda9:
+  val: y
+  desc: Not Yet Determined
+dda@:
+  val: y
+  desc: Staff Use Only
+ddca:
+  val: y
+  desc: Davis Library (Core-Non Circulating)
+ddcb:
+  val: y
+  desc: Davis Library (Building Use Only)
+ddcc:
+  val: y
+  desc: Davis Library (Non-circulating)
+ddcd:
+  val: y
+  desc: Davis Library Folio (Non-circulating)
+ddce:
+  val: y
+  desc: Davis Library Folio2 (Non-circulating)
+ddda:
+  val: y
+  desc: Davis Library
+dddaa:
+  val: y
+  desc: Davis Library LAIR
+dddab:
+  val: y
+  desc: Davis Library Maps
+dddb:
+  val: y
+  desc: Davis Library Folio
+dddc:
+  val: y
+  desc: Davis Library Folio-2
+ddhb:
+  val: y
+  desc: Diba Collection Serials Folio
+ddhc:
+  val: y
+  desc: Diba Collection Serials Folio-2
+ddhub:
+  val: y
+  desc: Davis Library Research Hub Desk
+ddof:
+  val: y
+  desc: Davis Library Circ Stacks Overflow (ask at Circ Desk)
+ddopl:
+  val: y
+  desc: Davis Library Planning Overflow (ask at Circ Desk)
+ddz:
+  val: y
+  desc: Davis (Main) Library Non-scoped
+dh:
+  val: y
+  desc: Davis Library Serials
+dhca:
+  val: y
+  desc: Davis Library
+dhcb:
+  val: y
+  desc: Davis Library Folio
+dhcc:
+  val: y
+  desc: Davis Library Folio2
+dhda:
+  val: y
+  desc: Davis Reference
+dhda@:
+  val: y
+  desc: Davis Library Serials Exchange
+dhea:
+  val: y
+  desc: Davis Reference
+dhka:
+  val: y
+  desc: Davis Reference
+dhna:
+  val: y
+  desc: Davis Library Serials Storage
+dhsa:
+  val: y
+  desc: Staff Reading Shelf
+dhz:
+  val: y
+  desc: Davis Library Serials Non-scoped
+dk:
+  val: y
+  desc: Davis Library Epigraphy Room
+dkda:
+  val: y
+  desc: Davis Library Epigraphy Room
+dkdb:
+  val: y
+  desc: Davis Library Epigraphy Room Folio
+dkdc:
+  val: y
+  desc: Davis Library Epigraphy Room Folio2
+dkz:
+  val: y
+  desc: Davis Library Epigraphy Room Non-Scoped
+dl:
+  val: y
+  desc: Davis Library AncientMapping
+dlda:
+  val: y
+  desc: Davis Library Ancient Mapping
+dlz:
+  val: y
+  desc: Davis Library Ancient Mapping Non-Scoped
+dm:
+  val: y
+  desc: Davis Library Thesis
+dmda:
+  val: y
+  desc: Davis Library Thesis
+dmdb:
+  val: y
+  desc: Davis Library Thesis Folio
+dmdc:
+  val: y
+  desc: Davis Library Thesis Folio-2
+dmz:
+  val: y
+  desc: Davis Library Thesis Non-Scoped
+dn:
+  val: y
+  desc: Storage
+dna9:
+  val: y
+  desc: Not Yet Determined
+dnda:
+  val: y
+  desc: Storage--Use Request Form
+dndac:
+  val: y
+  desc: Storage--Use Request Form Newspaper Storage
+dndb:
+  val: y
+  desc: Storage (F)--Use Request Form
+dndc:
+  val: y
+  desc: Storage (F2)--Use Request Form
+dndd:
+  val: y
+  desc: Storage (M)--Use Request Form
+dnfa:
+  val: y
+  desc: Storage(WS68)-Use Request Form
+dnfc:
+  val: y
+  desc: Storage(WS25)-Use Request Form
+dnmm:
+  val: y
+  desc: Storage(WS73)-Use Request Form
+dnz:
+  val: y
+  desc: Storage Non-scoped
+dq:
+  val: y
+  desc: Davis Library Global Browsing Collection (1st Floor)
+dqda:
+  val: y
+  desc: Davis Library Global Browsing Collection (1st Floor)
+dqz:
+  val: y
+  desc: Davis Library Global Browsing Collection (1st Floor)Non-Scoped
+dr:
+  val: y
+  desc: Davis Library Bindery
+drda:
+  val: y
+  desc: Davis Library Bindery
+drz:
+  val: y
+  desc: Davis Library Bindery Non-Scoped
+dv:
+  val: y
+  desc: Davis Library Cataloging
+dvca:
+  val: y
+  desc: Davis Library Catalog Department
+dvea:
+  val: y
+  desc: Exchange Use Only
+dvea@:
+  val: y
+  desc: Exchange Use Only East Asian
+dveb:
+  val: y
+  desc: Exchange Use Only
+dveb@:
+  val: y
+  desc: Exhange Use Only Slavic
+dvna:
+  val: y
+  desc: Binding Use Only
+dvta:
+  val: y
+  desc: Davis Library Preservation
+dvvf:
+  val: y
+  desc: Withdrawn
+dvvf@:
+  val: y
+  desc: Do Not Cat (FOLS)
+dvvn:
+  val: y
+  desc: Do Not use
+dvvw:
+  val: y
+  desc: Law Library
+dvz:
+  val: y
+  desc: Davis Library Cataloging Non-Scoped
+esz:
+  val: y
+  desc: Electronic Streaming Media non-scoped
+gg:
+  val: y
+  desc: Diba Collection
+gga9:
+  val: y
+  desc: Not Yet Determined
+gga@:
+  val: y
+  desc: Staff Use Only
+ggb:
+  val: y
+  desc: TBD
+ggba:
+  val: y
+  desc: Diba Collection Reserves
+ggca:
+  val: y
+  desc: Diba Collection Reference
+ggcb:
+  val: y
+  desc: Geological Sciences Library Reference - State Bib
+ggcc:
+  val: y
+  desc: Geological Sciences Library Abstracts
+ggcd:
+  val: y
+  desc: Geological Sciences Library Atlas Stand
+ggda:
+  val: y
+  desc: Diba Collection
+ggdb:
+  val: y
+  desc: Diba Collection Folio
+ggdc:
+  val: y
+  desc: Diba Collection Folio-2
+ggdf:
+  val: y
+  desc: Diba Library Office
+ggea:
+  val: y
+  desc: Diba Collection Ephemera
+ggha:
+  val: y
+  desc: Diba Collection Serials
+gghb:
+  val: y
+  desc: Diba Collection Serials Folio
+gghc:
+  val: y
+  desc: Diba Collection Serials Folio-2
+ggjj:
+  val: y
+  desc: Diba Collection Maps
+ggla:
+  val: y
+  desc: Diba Collection Flatcase
+gglaa:
+  val: y
+  desc: TBD
+gglb:
+  val: y
+  desc: TBD
+gglba:
+  val: y
+  desc: TBD
+ggma:
+  val: y
+  desc: TBD
+ggna:
+  val: y
+  desc: TBD
+ggpa:
+  val: y
+  desc: Diba Collection Postcards
+ggra:
+  val: y
+  desc: Diba Collection Rare
+ggrb:
+  val: y
+  desc: Diba Collection Rare Folio
+ggrc:
+  val: y
+  desc: Diba Collection Rare Folio-2
+ggva:
+  val: y
+  desc: Diba Collection Vault
+ggz:
+  val: y
+  desc: Diba Collection Non-Scoped
+hh:
+  val: y
+  desc: Highway Safety Research Center Library
+hha9:
+  val: y
+  desc: Not Yet Determined
+hha@:
+  val: y
+  desc: Staff Use Only
+hhca:
+  val: y
+  desc: Highway Safety Research Center Library Reference
+hhda:
+  val: y
+  desc: Highway Safety Research Center Library Main Stacks
+hhdd:
+  val: y
+  desc: Highway Safety Research Center Library Oversize
+hhde:
+  val: y
+  desc: Highway Safety Research Center Library New Books
+hhha:
+  val: y
+  desc: Highway Safety Research Center Library Journal Stacks
+hhhb:
+  val: y
+  desc: Highway Safety Research Center Library HRB Serials
+hhhc:
+  val: y
+  desc: Highway Safety Research Center Library TRB Serials
+hhhd:
+  val: y
+  desc: Highway Safety Research Center Library Library Science Pubs
+hhka:
+  val: y
+  desc: Highway Safety Research Center Library Maps
+hhta:
+  val: y
+  desc: Highway Safety Research Center Library Archives
+hhtb:
+  val: y
+  desc: Highway Safety Research Center Library Manuscripts
+hhz:
+  val: y
+  desc: Highway Safety Research Center Library Non-Scoped
+jj:
+  val: y
+  desc: Davis Library Maps Collection
+jja9:
+  val: y
+  desc: Not Yet Determined
+jja@:
+  val: y
+  desc: Staff Use Only
+jjda:
+  val: y
+  desc: Davis Library Maps Collection
+jjdf:
+  val: y
+  desc: Davis Library Maps Collection Office
+jjdg:
+  val: y
+  desc: Davis Library Maps Collection Historical Volumes
+jjha:
+  val: y
+  desc: Davis Library Maps Collection Serials
+jjka:
+  val: y
+  desc: Davis Library Maps Collection Gazetteers
+jjna:
+  val: y
+  desc: Davis Library Maps Collection Annex Volumes
+jjra:
+  val: y
+  desc: Davis Library Maps Collection Cage
+jjz:
+  val: y
+  desc: Davis Library Maps Collection Non-Scoped
+k:
+  val: y
+  desc: Law Library
+kdoc:
+  val: y
+  desc: Law Library Documents Collection
+kfa5:
+  val: y
+  desc: Law Library Faculty Offices
+kfac:
+  val: y
+  desc: Law Library Faculty Lounge
+kfapd:
+  val: y
+  desc: Law Library Faculty Publications Display
+krca:
+  val: y
+  desc: Law Library Current Awareness
+krcp:
+  val: y
+  desc: Law Library Current Periodicals
+krdis:
+  val: y
+  desc: Law Library Front Entrance Display
+kref:
+  val: y
+  desc: Law Library Reference Collection
+krefd:
+  val: y
+  desc: Law Library Reference Desk
+krefi:
+  val: y
+  desc: Law Library Reference Index Table
+krefn:
+  val: y
+  desc: Law Library NC Reference Collection (4th FL)
+kreft:
+  val: y
+  desc: Law Library Index Table (3rd FL)
+kres:
+  val: y
+  desc: Law Library Reserve Room
+kres2:
+  val: y
+  desc: Law Library Course Reserve
+krlei:
+  val: y
+  desc: Law Library Leisure Periodicals
+krlsc:
+  val: y
+  desc: Law Library Law Study Aids Collection
+krnbs:
+  val: y
+  desc: Law Library New Book Shelf
+kspba:
+  val: y
+  desc: Law Library Banking & Finance Center
+kspca:
+  val: y
+  desc: Law School Career Services
+kspci:
+  val: y
+  desc: Law Library Civil Rights Center
+kspcp:
+  val: y
+  desc: Law School Clinical Program
+kspen:
+  val: y
+  desc: Law Library Entrepreneurial Law Center
+ksppo:
+  val: y
+  desc: Law Library Poverty, Work & Opportunity Center
+ksta:
+  val: y
+  desc: Law Library Stacks
+ksta4:
+  val: y
+  desc: Law Library 4th Floor Collection
+ksta5:
+  val: y
+  desc: Law Library 5th Floor Collection
+kstaa:
+  val: y
+  desc: Law Library Stacks Overflow
+kstaf:
+  val: y
+  desc: Law Library Folio
+kstar:
+  val: y
+  desc: Law Library Records & Briefs
+kstas:
+  val: y
+  desc: Law Library Superseded
+kwrar:
+  val: y
+  desc: Law Library Archives
+kwrbr:
+  val: y
+  desc: Law Library Rare Books Room
+kwrc:
+  val: y
+  desc: Law Library Special Collections
+kwrc2:
+  val: y
+  desc: Law Library (Unavailable)
+kwrc3:
+  val: y
+  desc: Law Library Storage - Use Request Form
+kwrco:
+  val: y
+  desc: Law Library Special Collections online
+kwrma:
+  val: y
+  desc: Law Library Manuscripts
+kz:
+  val: y
+  desc: Law Library Non-Scoped
+kzaad:
+  val: y
+  desc: Law Library Offices
+kzacq:
+  val: y
+  desc: Law Library Acquisitions Dept.
+kzad:
+  val: y
+  desc: Law Library Offices
+kzadd:
+  val: y
+  desc: Law Library Offices
+kzcat:
+  val: y
+  desc: Law Library Cataloging Dept.
+kzcir:
+  val: y
+  desc: Law Library Offices
+kzfi:
+  val: y
+  desc: Law Library Offices
+kzit:
+  val: y
+  desc: Law Library Offices
+kzps:
+  val: y
+  desc: Law Library Offices
+kzref:
+  val: y
+  desc: Law Library Offices
+kzser:
+  val: y
+  desc: Law Library Serials Dept.
+kzts:
+  val: y
+  desc: Law Library Techical Services Division
+ll:
+  val: y
+  desc: Information & Library Science Library
+lla9:
+  val: y
+  desc: Not Yet Determined
+lla@:
+  val: y
+  desc: Staff Use Only
+llar:
+  val: y
+  desc: Information & Library Science Library Cage
+llb:
+  val: y
+  desc: Information & Library Science Library Reserve
+llba:
+  val: y
+  desc: Information & Library Science Library Reserve
+llca:
+  val: y
+  desc: Information & Library Science Library Reference
+llcb:
+  val: y
+  desc: Information & Library Science Library Reference-Catalog Collection
+llcc:
+  val: y
+  desc: Information & Library Science Library Reference-Folio
+llcd:
+  val: y
+  desc: Information & Library Science Library Reference - Index Shelves
+llce:
+  val: y
+  desc: Information & Library Science Library Reference-Workroom
+llcf:
+  val: y
+  desc: Information & Library Science Library Reference-Atlas Stand
+llda:
+  val: y
+  desc: Information & Library Science Library
+lldac:
+  val: y
+  desc: SILS LibInformation & Library Science Library
+lldb:
+  val: y
+  desc: Information & Library Science Library Folio
+lldc:
+  val: y
+  desc: Information & Library Science Library Folio-2
+llfa:
+  val: y
+  desc: Information & Library Science Library Librarian's Cabinet
+llhb:
+  val: y
+  desc: Information & Library Science Library Periodicals Collectn
+llhba:
+  val: y
+  desc: Information & Library Science Library Periodicals Collection Folio
+llhc:
+  val: y
+  desc: Information & Library Science Library Non-English LanguageSerials
+llhca:
+  val: y
+  desc: Information & Library Science Library Non-Eng Language Serials Folio
+lljc:
+  val: y
+  desc: Information & Library Science Library Juvenile Reference
+lljd:
+  val: y
+  desc: Information & Library Science Library Juvenile
+llje:
+  val: y
+  desc: Information & Library Science Library Juvenile Folio
+lljf:
+  val: y
+  desc: Information & Library Science Library Juvenile Folio-2
+llma:
+  val: y
+  desc: Information & Library Science Library Thesis
+llmb:
+  val: y
+  desc: Information & Library Science Library Thesis Folio
+llmc:
+  val: y
+  desc: Information & Library Science Library Thesis Folio-2
+llz:
+  val: y
+  desc: Information & Library Science Library Non-Scoped
+mm:
+  val: y
+  desc: Music Library
+mma9:
+  val: y
+  desc: Not Yet Determined
+mma@:
+  val: y
+  desc: Staff Use Only
+mmb:
+  val: y
+  desc: Music Library Reserve
+mmba:
+  val: y
+  desc: Music Library Reserve
+mmca:
+  val: y
+  desc: Music Library Reference
+mmcb:
+  val: y
+  desc: Music Library Reference Folio
+mmda:
+  val: y
+  desc: Music Library
+mmdb:
+  val: y
+  desc: Music Library Folio
+mmdd:
+  val: y
+  desc: Music Library Service Desk
+mmfa:
+  val: y
+  desc: Music Library Staging Area
+mmka:
+  val: y
+  desc: Music Library Miniature Scores
+mmma:
+  val: y
+  desc: Music Library Theses/Dissertations
+mmra:
+  val: y
+  desc: Music Library Vault
+mmrb:
+  val: y
+  desc: Music Library Vault Folio
+mmz:
+  val: y
+  desc: Music Library Non-Scoped
+nnpe:
+  val: y
+  desc: Not Purchased Serial
+noa:
+  val: y
+  desc: Health Sciences Library Users Services Desk
+nocl:
+  val: y
+  desc: Health Sciences Library Computer Lab
+nods:
+  val: y
+  desc: Health Sciences Library Dictionary Stand
+noh:
+  val: y
+  desc: Health Sciences Library
+noh9:
+  val: y
+  desc: Medical  Student Book Exchange
+noh@:
+  val: y
+  desc: Staff Use Only
+nohb:
+  val: y
+  desc: Health Sciences Library History Collection
+nohba:
+  val: y
+  desc: Health Sciences Library History Collection Archives
+nohbb:
+  val: y
+  desc: Health Sciences Library History Collection Reference
+nohbc:
+  val: y
+  desc: Health Sciences Library History Collection Reference Oversize
+nohbd:
+  val: y
+  desc: Health Sciences Library History Collection Display
+nohbf:
+  val: y
+  desc: Health Sciences Library History Collection Folio
+nohbg:
+  val: y
+  desc: Health Sciences Library History Collection Folio-2
+nohbh:
+  val: y
+  desc: Health Sciences Library Health Affairs Author Collection
+nohbm:
+  val: y
+  desc: Health Sciences Library History Collection Flat Cases
+nohbr:
+  val: y
+  desc: Health Sciences Library History Reading Room
+nohbv:
+  val: y
+  desc: Health Sciences Library History Collection Vault
+nohf:
+  val: y
+  desc: HSL NYAM Theses LSC Staging Area
+nohg:
+  val: y
+  desc: Health Sciences Library Bibliography
+nohh:
+  val: y
+  desc: Health Sciences Library Books
+nohi:
+  val: y
+  desc: Health Sciences Library User Services Center
+nohk1:
+  val: y
+  desc: Health Sciences Library Office Reference
+nohk2:
+  val: y
+  desc: Health Sciences Library Office Reference
+nohk3:
+  val: y
+  desc: Health Sciences Library Office Reference
+nohk4:
+  val: y
+  desc: Health Sciences Library Office Reference
+nohk5:
+  val: y
+  desc: Health Sciences Library Office Reference
+nohk6:
+  val: y
+  desc: Health Sciences Library Office Reference
+noho:
+  val: y
+  desc: Health Sciences Library Oversize Books
+nohr:
+  val: y
+  desc: Health Sciences Library Reference
+nohs:
+  val: y
+  desc: Health Sciences Library Journals
+nohss:
+  val: y
+  desc: Health Sciences Library Journals
+noht:
+  val: y
+  desc: Health Sciences Library Compact Shelving
+nohu:
+  val: y
+  desc: Health Sciences Library Storage
+nohv:
+  val: y
+  desc: Health Sciences Library Reserve Room
+nohw:
+  val: y
+  desc: Health Sciences Library Staff Working Tools
+nohx:
+  val: y
+  desc: Health Sciences Library Indexes & Abstracts
+nohy:
+  val: y
+  desc: Health Sciences Library Reference
+nohz:
+  val: y
+  desc: Health Sciences Library Offsite Collection (form)
+nohzh:
+  val: y
+  desc: Health Sciences Library Non-scoped
+nohzx:
+  val: y
+  desc: Health Sciences Library Offsite Special Collections
+nomk:
+  val: y # no items as of 2018
+  desc: Health Sciences Library Media Kitchen
+noxx:
+  val: y
+  desc: Suppressed
+nozh:
+  val: y
+  desc: Health Sciences Library Non-Scoped
+nozz:
+  val: y
+  desc: DISCARD
+nrpe:
+  val: y
+  desc: Under Consideration
+pp:
+  val: y
+  desc: LGBTQ Center Library
+ppda:
+  val: y
+  desc: LGBTQ Center Library
+ppdj:
+  val: y
+  desc: LGBTQ Center Library Juvenile
+ppz:
+  val: y
+  desc: LGBTQ Center Library Non Scoped
+qq:
+  val: y
+  desc: Carolina Women’s Center Collection
+qqda:
+  val: y
+  desc: Carolina Women’s Center Collection
+qqz:
+  val: y
+  desc: Carolina Women’s Center Collection Non-Scoped
+rr:
+  val: y
+  desc: Biology/Chemistry Library
+rra9:
+  val: y
+  desc: Not Yet Determined
+rra@:
+  val: y
+  desc: Staff Use Only
+rrb:
+  val: y
+  desc: Biology/Chemistry Library Reserve
+rrba:
+  val: y
+  desc: Biology/Chemistry Library Reserve
+rrca:
+  val: y
+  desc: Biology/Chemistry Library Reference
+rrda:
+  val: y
+  desc: Biology/Chemistry Library
+rrdb:
+  val: y
+  desc: Biology/Chemistry Library Folio
+rrdc:
+  val: y
+  desc: Biology/Chemistry Library Folio-2
+rrde:
+  val: y
+  desc: Biology/Chemistry Library Hold Shelf
+rrdf:
+  val: y
+  desc: Biology/Chemistry Library Office
+rrma:
+  val: y
+  desc: Biology/Chemistry Library Thesis
+rrn3:
+  val: y
+  desc: Biology/Chemistry Library Room 311
+rrna:
+  val: y
+  desc: Biology/Chemistry Library Storage
+rrnb:
+  val: y
+  desc: Biology/Chemistry Library Closet
+rrz:
+  val: y
+  desc: Biology/Chemistry Library Non-Scoped
+ss:
+  val: y
+  desc: Stone Center Library
+ssa9:
+  val: y
+  desc: Not Yet Determined
+ssa@:
+  val: y
+  desc: Staff Use Only
+ssb:
+  val: y
+  desc: Stone Center Library Reserve
+ssba:
+  val: y
+  desc: Stone Center Library Reserve
+ssca:
+  val: y
+  desc: Stone Center Library Reference
+ssda:
+  val: y
+  desc: Stone Center Library
+ssdb:
+  val: y
+  desc: Stone Center Library Folio
+ssdc:
+  val: y
+  desc: Stone Center Library Folio-2
+ssha:
+  val: y
+  desc: Stone Center Library Journals
+ssma:
+  val: y
+  desc: Stone Center Library Thesis
+ssz:
+  val: y
+  desc: Stone Center Library Non-Scoped
+tr:
+  val: y
+  desc: Library Service Center
+traas:
+  val: y
+  desc: Art Library Remote Storage
+trbrs:
+  val: y
+  desc: Brittle Book Remote Storage
+trln:
+  val: y
+  desc: Library Service Center — Request from Storage
+trlnb:
+  val: y
+  desc: Library Service Center Staging Area — Use Request Form
+trlnc:
+  val: y
+  desc: Library Service Center Processing
+trlns:
+  val: y
+  desc: Library Service Center
+trlnw:
+  val: y
+  desc: Library Service Center -- Request from Storage
+trmm:
+  val: y
+  desc: Music Collection Remote Storage
+trnhb:
+  val: y
+  desc: Health Sciences Library Offsite NYAM International Theses
+troup:
+  val: y
+  desc: TRLN Shared Print Collection -- Use Request Form
+trs:
+  val: y
+  desc: TRLN Special Request via ILL
+trulv:
+  val: y
+  desc: Media Resource Center Unprocessed Storage
+trwas:
+  val: y
+  desc: Archival Collections Remote Storage
+trwbs:
+  val: y
+  desc: North Carolina Collection Remote Storage
+trwcs:
+  val: y
+  desc: Rare Book Collection Remote Storage
+trz:
+  val: y
+  desc: Library Service Center nonscoped
+ua:
+  val: y
+  desc: Undergrad Library
+uaa@:
+  val: y
+  desc: Staff Use Only
+uada:
+  val: y
+  desc: Undergrad Library
+uadab:
+  val: y
+  desc: Undergrad Library Circulation Desk
+uadad:
+  val: y
+  desc: Undergrad Library Kit
+uadaf:
+  val: y
+  desc: Undergrad Library Record
+uadag:
+  val: y
+  desc: Undergrad Library Sound Cassette
+uaz:
+  val: y
+  desc: Undergrad Library non-scoped
+ub:
+  val: y
+  desc: Undergrad Library Reserves
+uba9:
+  val: y
+  desc: Not Yet Determined
+uba@:
+  val: y
+  desc: Staff Use Only
+ubb:
+  val: y
+  desc: Undergrad Library Reserves
+ubba:
+  val: y
+  desc: Undergrad Library Reserves Reading Room
+ubbaa:
+  val: y
+  desc: Undergrad Library Reserves Desk
+ubbb:
+  val: y
+  desc: Undergrad Library Reserve Textbooks
+ubz:
+  val: y
+  desc: Undergrad Library Reserves Non-Scoped
+uc:
+  val: y
+  desc: Undergrad Library Reference
+ucaa:
+  val: y
+  desc: Undergrad Library Reference
+ucaaa:
+  val: y
+  desc: Undergrad Library Reference Atlas Case
+ucaab:
+  val: y
+  desc: Undergrad Library Reference - Open for re-designation
+ucaac:
+  val: y
+  desc: Undergrad Library Reference - Open for re-designation
+ucaad:
+  val: y
+  desc: Undergrad Library Reference Dictionaries
+ucab:
+  val: y
+  desc: Undergrad Library Reference Desk
+ucz:
+  val: y
+  desc: Undergrad Library Reference Non-Scoped
+ud:
+  val: y
+  desc: Undergrad Library Folio
+udba:
+  val: y
+  desc: Undergrad Library Folio
+udbb:
+  val: y
+  desc: Undergrad Library Folio-2
+udz:
+  val: y
+  desc: Undergrad Library Folio Non-Scoped
+ul:
+  val: y
+  desc: Media Resources Center
+ula8:
+  val: y
+  desc: Not Yet Determined
+ula@:
+  val: y
+  desc: Staff Use Only
+ulba:
+  val: y
+  desc: Media Resources Center Reserve
+ulca:
+  val: y
+  desc: Media Resources Center Reference
+ulcab:
+  val: y
+  desc: Media Resources Center Reference - Open for re-designation
+ulcac:
+  val: y
+  desc: Media Resources Center Reference- Open for re-designation
+ulda:
+  val: y
+  desc: Media Resources Center
+uldaa:
+  val: y
+  desc: Media Resources Center Screenplay
+uldb:
+  val: y
+  desc: Media Resources Center Language Resources
+ulz:
+  val: y
+  desc: Media Resources Center Non-Scoped
+va:
+  val: y
+  desc: School of Government Library
+vaa9:
+  val: y
+  desc: Not Yet Determined
+vaa@:
+  val: y
+  desc: Staff Use Only
+vaca:
+  val: y
+  desc: School of Government Library Reference
+vada:
+  val: y
+  desc: School of Government Library
+vadac:
+  val: y
+  desc: School of Government Library - NC State Documents
+vama:
+  val: y
+  desc: School of Government Library Rare Book Room
+vapa:
+  val: y
+  desc: School of Government--Federal Documents
+vaz:
+  val: y
+  desc: School of Government Library Non-Scoped
+wa:
+  val: y
+  desc: Archival Materials (Wilson Library)
+waa9:
+  val: y
+  desc: Not Yet Determined
+waa@:
+  val: y
+  desc: Staff Use Only
+waca:
+  val: y
+  desc: Wilson Library Archival Mat. Ref.
+wada:
+  val: y
+  desc: Rare Book Literary and Historical Papers
+wadb:
+  val: y
+  desc: Southern Folklife Collection
+wadc:
+  val: y
+  desc: Southern Historical Collection
+wadd:
+  val: y
+  desc: University Archives
+waz:
+  val: y
+  desc: Wilson Library Archival Mat. Non-Scoped
+wb:
+  val: y
+  desc: North Carolina Collection
+wba9:
+  val: y
+  desc: Not Yet Determined
+wba@:
+  val: y
+  desc: Staff Use Only
+wbca:
+  val: y
+  desc: North Carolina Collection Reading Room
+wbcb:
+  val: y
+  desc: North Carolina Collection Reading Room Folio
+wbda:
+  val: y
+  desc: North Carolina Collection
+wbdb:
+  val: y
+  desc: North Carolina Collection Folio
+wbdc:
+  val: y
+  desc: North Carolina Collection Folio-2
+wbha:
+  val: y
+  desc: North Carolina Collection Hayes
+wbhb:
+  val: y
+  desc: North Carolina Collection Hayes Folio
+wbja:
+  val: y
+  desc: North Carolina Collection Gallery
+wbma:
+  val: y
+  desc: North Carolina Collection Thesis
+wbmb:
+  val: y
+  desc: North Carolina Collection Thesis Folio
+wbmc:
+  val: y
+  desc: North Carolina Collection Thesis Folio-2
+wbna:
+  val: y
+  desc: North Carolina Collection Cotten
+wbnaa:
+  val: y
+  desc: North Carolina Collection Cotten Map
+wbnb:
+  val: y
+  desc: North Carolina Collection Cotten Folio
+wbnc:
+  val: y
+  desc: North Carolina Collection Cotten Folio-2
+wbpa:
+  val: y
+  desc: North Carolina Collection State Documents Collection
+wbra:
+  val: y
+  desc: North Carolina Collection Vault
+wbrb:
+  val: y
+  desc: North Carolina Collection Vault Folio
+wbrc:
+  val: y
+  desc: North Carolina Collection Vault Folio-2
+wbrla:
+  val: y
+  desc: North Carolina Collection Raleigh
+wbta:
+  val: y
+  desc: North Carolina Collection Old Library
+wbtb:
+  val: y
+  desc: North Carolina Collection Old Library Folio
+wbtc:
+  val: y
+  desc: North Carolina Collection Old Library Folio-2
+wbwa:
+  val: y
+  desc: North Carolina Collection Wolfe
+wbwb:
+  val: y
+  desc: North Carolina Collection Wolfe Folio
+wbwc:
+  val: y
+  desc: North Carolina Collection Wolfe Folio-2
+wbwd:
+  val: y
+  desc: North Carolina Collection Magi Wolfe
+wbwe:
+  val: y
+  desc: North Carolina Collection Magi Wolfe Folio
+wbwf:
+  val: y
+  desc: North Carolina Collection Magi Wolfe Folio-2
+wbz:
+  val: y
+  desc: North Carolina Collection Non-Scoped
+wc:
+  val: y
+  desc: Rare Book Collection
+wca9:
+  val: y
+  desc: Not Yet Determined
+wca@:
+  val: y
+  desc: Staff Use Only
+wcb:
+  val: y
+  desc: Rare Book Collection Reserve Room
+wcba:
+  val: y
+  desc: Rare Book Collection Reserve Room
+wcbb:
+  val: y
+  desc: Rare Book Collection Carco
+wcca:
+  val: y
+  desc: Rare Book Collection Reference
+wccb:
+  val: y
+  desc: Rare Book Collection Reference Folio
+wccc:
+  val: y
+  desc: Rare Book Collection Reference Folio-2
+wcda:
+  val: y
+  desc: Rare Book Collection
+wcdb:
+  val: y
+  desc: Rare Book Collection Folio
+wcdc:
+  val: y
+  desc: Rare Book Collection Folio-2
+wcdd:
+  val: y
+  desc: Rare Book Collection Accession
+wcde:
+  val: y
+  desc: Rare Book Collection Accession Folio
+wcdf:
+  val: y
+  desc: Rare Book Collection Accession Folio-2
+wces:
+  val: y
+  desc: Rare Book Collection Estienne
+wcet:
+  val: y
+  desc: Rare Book Collection Estienne Folio
+wcev:
+  val: y
+  desc: Rare Book Collection Estienne Folio-2
+wcfa:
+  val: y
+  desc: Rare Book Collection Frost
+wcfb:
+  val: y
+  desc: Rare Book Collection Frost Folio
+wcfc:
+  val: y
+  desc: Rare Book Collection Frost Folio-2
+wcfj:
+  val: y
+  desc: Rare Book Collection Flatow
+wcfk:
+  val: y
+  desc: Rare Book Collection Flatow Folio
+wcfm:
+  val: y
+  desc: Rare Book Collection Flatow Folio-2
+wcfr:
+  val: y
+  desc: Rare Book Collection Flatcase Shaw
+wcfs:
+  val: y
+  desc: Rare Book Collection Flatcase Beats
+wcft:
+  val: y
+  desc: Rare Book Collection Flatcase Hoyt
+wcfu:
+  val: y
+  desc: Rare Book Collection Flatcase Special Collection
+wcfv:
+  val: y
+  desc: Rare Book Collection Flatcase LC
+wcfw:
+  val: y
+  desc: Rare Book  Collection Flatcase Oversize
+wcgj:
+  val: y
+  desc: Rare Book Collection Gottschalk
+wcgk:
+  val: y
+  desc: Rare Book Collection Gottschalk Folio
+wcgm:
+  val: y
+  desc: Rare Book Collection Gottschalk Folio-2
+wcgs:
+  val: y
+  desc: Rare Book Collection Grove
+wcgt:
+  val: y
+  desc: Rare Book Collection Grove Folio
+wcgv:
+  val: y
+  desc: Rare Book Collection Grove Folio-2
+wcha:
+  val: y
+  desc: Rare Book Collection Baer
+wchb:
+  val: y
+  desc: Rare Book Collection Baer Folio
+wchc:
+  val: y
+  desc: Rare Book Collection Baer Folio-2
+wchj:
+  val: y
+  desc: Rare Book Collection Beats
+wchk:
+  val: y
+  desc: Rare Book Collection Beats Folio
+wchm:
+  val: y
+  desc: Rare Book Collection Beats Folio-2
+wchn:
+  val: y
+  desc: Rare Book Collection Beats Newspapers
+wchp:
+  val: y
+  desc: Rare Book Collection Beats Tabloids
+wchs:
+  val: y
+  desc: Rare Book Collection Byron
+wcht:
+  val: y
+  desc: Rare Book Collection Byron Folio
+wchv:
+  val: y
+  desc: Rare Book Collection Byron Folio-2
+wcjc:
+  val: y
+  desc: Rare Book Collection Carco Folio-2
+wcka:
+  val: y
+  desc: Rare Book Collection Keats
+wckb:
+  val: y
+  desc: Rare Book Collection Keats Folio
+wckc:
+  val: y
+  desc: Rare Book Collection Keats Folio-2
+wclj:
+  val: y
+  desc: Rare Book Collection Lewis
+wclk:
+  val: y
+  desc: Rare Book Collection Lewis Folio
+wclm:
+  val: y
+  desc: Rare Book Collection Lewis Folio-2
+wcms:
+  val: y
+  desc: Rare Book Collection Murray
+wcmt:
+  val: y
+  desc: Rare Book Collection Murray Folio
+wcmv:
+  val: y
+  desc: Rare Book Collection Murray Folio-2
+wcpa:
+  val: y
+  desc: Rare Book Collection Patton
+wcpb:
+  val: y
+  desc: Rare Book Collection Patton Folio
+wcpc:
+  val: y
+  desc: Rare Book Collection Patton Folio-2
+wcpd:
+  val: y
+  desc: Rare Book Collection Patton Tabloids
+wcpf:
+  val: y
+  desc: Rare Book Collection Patton Newspapers
+wcpj:
+  val: y
+  desc: Rare Book Collection Pearson
+wcpk:
+  val: y
+  desc: Rare Book Collection Pearson Folio
+wcpm:
+  val: y
+  desc: Rare Book Collection Pearson Folio-2
+wcpn:
+  val: y
+  desc: Rare Book Collection Pearson Tabloids
+wcpp:
+  val: y
+  desc: Rare Book Collection Pearson Newspapers
+wcps:
+  val: y
+  desc: Rare Book Collection Percy
+wcpt:
+  val: y
+  desc: Rare Book Collection Percy Folio
+wcpv:
+  val: y
+  desc: Rare Book Collection Percy Folio-2
+wcrr:
+  val: y
+  desc: Rare Book Collection Review
+wcrs:
+  val: y
+  desc: Rare Book Collection Processing
+wcsa:
+  val: y
+  desc: Rare Book Collection Andre Savine Collection
+wcsb:
+  val: y
+  desc: Rare Book Collection Andre Savine Collection Folio
+wcsc:
+  val: y
+  desc: Rare Book Collection Andre Savine Collection Folio 2
+wcsj:
+  val: y
+  desc: Rare Book Collection Smith-Elder
+wcsk:
+  val: y
+  desc: Rare Book Collection Smith-Elder Folio
+wcsm:
+  val: y
+  desc: Rare Book Collection Smith-Elder Folio-2
+wcsn:
+  val: y
+  desc: Rare Book Collection Stuart
+wcsna:
+  val: y
+  desc: Rare Book Collection Stuart Newspapers
+wcsnb:
+  val: y
+  desc: Rare Book Collection Stuart Tabloids
+wcso:
+  val: y
+  desc: Rare Book Collection Stuart Folio
+wcsp:
+  val: y
+  desc: Rare Book Collection Stuart Folio-2
+wcss:
+  val: y
+  desc: Rare Book Collection Southern Pamphlet
+wcst:
+  val: y
+  desc: Rare Book Collection Southern Pamphlet Folio
+wcsv:
+  val: y
+  desc: Rare Book Collection Southern Pamphlet Folio-2
+wcta:
+  val: y
+  desc: Rare Book Collection Ticknor
+wctb:
+  val: y
+  desc: Rare Book Collection Ticknor Folio
+wctc:
+  val: y
+  desc: Rare Book Collection Ticknor Folio-2
+wctj:
+  val: y
+  desc: Rare Book Collection Travel
+wctk:
+  val: y
+  desc: Rare Book Collection Travel Folio
+wctm:
+  val: y
+  desc: Rare Book Collection Travel Folio-2
+wcvj:
+  val: y
+  desc: Rare Book Collection Victorian Bindings
+wcvk:
+  val: y
+  desc: Rare Book Collection Victorian Bindings Folio
+wcvm:
+  val: y
+  desc: Rare Book Collection Victorian Bindings Folio-2
+wcwj:
+  val: y
+  desc: Rare Book Collection Wordsworth
+wcwk:
+  val: y
+  desc: Rare Book Collection Wordsworth Folio
+wcwm:
+  val: y
+  desc: Rare Book Collection Wordsworth Folio-2
+wcya:
+  val: y
+  desc: Rare Book Collection Yeats
+wcyb:
+  val: y
+  desc: Rare Book Collection Yeats Folio
+wcyc:
+  val: y
+  desc: Rare Book Collection Yeats Folio-2
+wcz:
+  val: y
+  desc: Rare Book Collection Non-Scoped
+wczo:
+  val: y
+  desc: Rare Book Collection Carco Folio
+wwa9:
+  val: y
+  desc: Not Yet Determined
+wwa@:
+  val: y
+  desc: Staff Use Only
+xa:
+  val: y
+  desc: Marine Sciences Library
+xaa9:
+  val: y
+  desc: Not Yet Determined
+xaa@:
+  val: y
+  desc: Staff Use Only
+xada:
+  val: y
+  desc: Marine Sciences Library
+xadb:
+  val: y
+  desc: Marine Sciences Library Folio
+xadc:
+  val: y
+  desc: Marine Sciences Library Folio-2
+xama:
+  val: y
+  desc: Marine Sciences Library Thesis
+xamb:
+  val: y
+  desc: Marine Sciences Library Thesis Folio
+xamc:
+  val: y
+  desc: Marine Sciences Library Thesis Folio-2
+xaz:
+  val: y
+  desc: Marine Sciences Library Non-Scoped
+xb:
+  val: y
+  desc: Odum Institute Library
+xba9:
+  val: y
+  desc: Not Yet Determined
+xba@:
+  val: y
+  desc: Staff Use Only
+xbda:
+  val: y
+  desc: Odum Institute Library
+xbz:
+  val: y
+  desc: Odum Institute Library Non-Scoped
+xc:
+  val: y
+  desc: Carolina Population Center Library
+xcba:
+  val: y
+  desc: Carolina Population Center Library Reference
+xcca:
+  val: y
+  desc: Carolina Population Center Library Reserve
+xccc:
+  val: y
+  desc: Carolina Population Center Library Main Stacks
+xcda:
+  val: y
+  desc: Carolina Population Center Library
+xcdc:
+  val: y
+  desc: Carolina Population Center Library Folio-2
+xcga:
+  val: y
+  desc: Carolina Population Center Library Storage 1
+xcha:
+  val: y
+  desc: Carolina Population Center Library Journal Stacks
+xcz:
+  val: y
+  desc: Carolina Population Center Non-scoped
+xd:
+  val: y
+  desc: UNC Kenan-Flagler (McColl 4502)
+xdaa:
+  val: y
+  desc: UNC Kenan-Flagler (McColl 4502)
+xdab:
+  val: y
+  desc: UNC Kenan-Flagler (McColl 4502)
+ya:
+  val: y
+  desc: K-12 International Resource Library
+yaa9:
+  val: y
+  desc: K-12 International Resource Library Not Yet Determined
+yaa@:
+  val: y
+  desc: K-12 International Resource Library Staff Use Only
+yada:
+  val: y
+  desc: K-12 International Resource Library
+yaz:
+  val: y
+  desc: Global Initiatives K-12 Library Non-Scoped
+yb:
+  val: y
+  desc: Office of Research Development
+yba9:
+  val: y
+  desc: Not Yet Determined
+yba@:
+  val: y
+  desc: Staff Use Only
+ybda:
+  val: y
+  desc: Office of Research Development
+ybz:
+  val: y
+  desc: Office of Research Development Non-Scoped
+yc:
+  val: y
+  desc: Graduate Funding Information Center
+yca9:
+  val: y
+  desc: Not Yet Determined
+yca@:
+  val: y
+  desc: Staff Use Only
+ycca:
+  val: y
+  desc: Graduate Funding Information Center Reference
+ycda:
+  val: y
+  desc: Graduate Funding Information Center
+ycz:
+  val: y
+  desc: Graduate Funding Information Center Non-Scoped
+yd:
+  val: y
+  desc: Park Library (School of Media & Journalism)
+yda9:
+  val: y
+  desc: Not Yet Determined
+yda@:
+  val: y
+  desc: Staff Use Only
+ydb:
+  val: y
+  desc: Park Library (School of Media & Journalism) Reserve
+ydba:
+  val: y
+  desc: Park Library (School of Media & Journalism) Reserve
+ydca:
+  val: y
+  desc: Park Library (School of Media & Journalism) Reference
+ydcb:
+  val: y
+  desc: Park Library (School of Media & Journalism) Maps
+ydda:
+  val: y
+  desc: Park Library (School of Media & Journalism)
+yddc:
+  val: y
+  desc: Park Library (School of Media & Journalism) Case (ask at Circ Desk)
+ydfa:
+  val: y
+  desc: Park Library (School of Media & Journalism) Folio
+ydha:
+  val: y
+  desc: Park Library (School of Media & Journalism) Serials
+ydra:
+  val: y
+  desc: Park Library (School of Media & Journalism) Spearman Collection
+ydrb:
+  val: y
+  desc: Park Library (School of Media & Journalism) Historical Collection
+ydrc:
+  val: y
+  desc: Park Library (School of Media & Journalism) Student Papers
+ydz:
+  val: y
+  desc: Park Library (School of Media & Journalism)Non-Scoped
+ye:
+  val: y
+  desc: Scholarship Resource Center Library
+yea9:
+  val: y
+  desc: Not Yet Determined
+yea@:
+  val: y
+  desc: Staff Use Only
+yeda:
+  val: y
+  desc: Scholarship Resource Center Library
+yez:
+  val: y
+  desc: Scholarship Resource Center Library Non-Scoped
+yf:
+  val: y
+  desc: Campus Box Delivery
+yg:
+  val: y
+  desc: North Carolina Botanical Gardens Library
+ygda:
+  val: y
+  desc: North Carolina Botanical Garden Library
+ygdb:
+  val: y
+  desc: North Carolina Botanical Garden Reference
+ygdc:
+  val: y
+  desc: North Carolina Botanical Garden Juvenile
+ygdd:
+  val: y
+  desc: North Carolina Botanical Garden Archives
+ygde:
+  val: y
+  desc: North Carolina Botanical Garden Rare Books
+ygdf:
+  val: y
+  desc: North Carolina Botanical Garden Storage
+ygdh:
+  val: y
+  desc: UNC Herbarium
+ygds:
+  val: y
+  desc: North Carolina Botanical Garden Serials
+ygz:
+  val: y
+  desc: North Carolina Botanical Garden Non-Scoped
+zzza:
+  val: y
+  desc: Highlighting not enabled
+zzzb:
+  val: y
+  desc: Library (Ask at Circ Desk)
+zzzzc:
+  val: y
+  desc: 90 Day Loan Period
+zzzzz:
+  val: y
+  desc: Error
+...

@@ -1,0 +1,266 @@
+---
+"0":     
+  val: y
+  desc: Book
+"1":     
+  val: y
+  desc: Non-circ book
+"2":     
+  val: y
+  desc: Serial
+"3":     
+  val: y
+  desc: Non-circ serial
+"4":     
+  val: n
+  desc: Art original
+"5":     
+  val: n
+  desc: Art Reproduction
+"6":     
+  val: n
+  desc: A-V
+"7":     
+  val: y
+  desc: Braille
+"8":     
+  val: n
+  desc: Broadside
+"9":     
+  val: n
+  desc: CD-ROM
+"10":    
+  val: n
+  desc: Chart
+"11":    
+  val: n
+  desc: Computer file
+"12":    
+  val: n
+  desc: Database
+"13":    
+  val: n
+  desc: Misc
+"14":    
+  val: n
+  desc: Diskette
+"15":    
+  val: n
+  desc: Drawing
+"16":    
+  val: n
+  desc: Filmstrip
+"17":    
+  val: n
+  desc: Flash card
+"18":    
+  val: n
+  desc: Game
+"19":    
+  val: n
+  desc: Globe
+"20":    
+  val: y
+  desc: Government Document
+"21":    
+  val: n
+  desc: Interactive
+"22":    
+  val: y
+  desc: Juvenile # - books are included
+"23":    
+  val: n
+  desc: Kit
+"24":    
+  val: y
+  desc: Manuscript
+"25":    
+  val: y
+  desc: Map #- Atlases are coded this way
+"26":    
+  val: n
+  desc: Microcard
+"27":    
+  val: n
+  desc: Microfiche
+"28":    
+  val: n
+  desc: Microfilm
+"29":    
+  val: n
+  desc: Microform
+"30":    
+  val: n
+  desc: Microslide
+"31":    
+  val: n
+  desc: Model
+"32":    
+  val: n
+  desc: Motion picture
+"33":    
+  val: y
+  desc: New book
+"34":    
+  val: y
+  desc: Other #- Includes missing monograph volumes, etc.
+"35":    
+  val: n
+  desc: Pamphlet
+"36":    
+  val: n
+  desc: Photograph
+"37":    
+  val: n
+  desc: Picture
+"38":    
+  val: y
+  desc: Picture book
+"39":    
+  val: n
+  desc: Postcard
+"40":    
+  val: n
+  desc: Poster
+"41":    
+  val: n
+  desc: Print
+"42":    
+  val: n
+  desc: Realia
+"43":    
+  val: y
+  desc: Reference
+"44":    
+  val: y
+  desc: 2 Hour
+"45":    
+  val: y
+  desc: Score
+"46":    
+  val: n
+  desc: Slide
+"47":    
+  val: n
+  desc: Software
+"48":    
+  val: n
+  desc: Sound cassette
+"49":    
+  val: n
+  desc: Sound CD
+"50":    
+  val: n
+  desc: Sound recording
+"51":    
+  val: n
+  desc: Technical drawing
+"52":    
+  val: y
+  desc: Thesis
+"53":    
+  val: n
+  desc: Toy
+"54":    
+  val: n
+  desc: Transparency
+"55":    
+  val: n
+  desc: Uncataloged material #- If uncataloged, should not have OCLC number
+"56":    
+  val: n
+  desc: Video cartridge
+"57":    
+  val: n
+  desc: Video cassette
+"58":    
+  val: n
+  desc: Video disc
+"59":    
+  val: n
+  desc: Video recording
+"60":    
+  val: n
+  desc: DVD
+"61":    
+  val: n
+  desc: Laptop
+"62":    
+  val: n
+  desc: Browse #- don t include things we don t own... 
+"63":    
+  val: n
+  desc: Key
+"64":    
+  val: n
+  desc: Wireless NIC
+"65":    
+  val: n
+  desc: Carrel Key
+"66":    
+  val: n
+  desc: Serial temp #- no items of this type in catalog 2013-09-25, can t evaluate
+"67":    
+  val: n
+  desc: Microfilm (Master)
+"68":    
+  val: n
+  desc: Microfilm (Print-M)
+"69":    
+  val: n
+  desc: Microfilm (Use)
+"70":    
+  val: n
+  desc: Blu-ray
+"71":    
+  val: y
+  desc: 2 Hour In Library Use Only
+"72":    
+  val: y
+  desc: 24 Hour
+"73":    
+  val: y
+  desc: 7 Day
+"74":    
+  val: y
+  desc: 1 Day
+"75":    
+  val: y
+  desc: 3 Day
+"76":    
+  val: n
+  desc: Streaming Video
+"77":    
+  val: n
+  desc: R&IS Gadget
+"78":    
+  val: y
+  desc: "Artist's Book"
+"79":    
+  val: y
+  desc: Auction Catalog
+"80":    
+  val: y
+  desc: 4 Hour
+"81":    
+  val: y
+  desc: 4 Hour In Library Use Only
+"82":    
+  val: y
+  desc: 3 Hour In MRC Use Only #- probably will be weeded out by format, but they may have books...
+"83":    
+  val: y
+  desc: 3 Hour In Library Use Only
+"84":    
+  val: n
+  desc: GPS #equipment
+"85":    
+  val: n
+  desc: Relais #- temp records for items borrowed through Relais/ILL
+"86":
+  val: n
+  desc: Digital Device
+"116":   
+  val: n
+  desc: Non coop #- no items of this type in catalog 2013-09-25, can t evaluate
+...

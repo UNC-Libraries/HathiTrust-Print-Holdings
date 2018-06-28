@@ -1,0 +1,5 @@
+require_relative 'hathi_print_holdings/writers'
+require_relative 'hathi_print_holdings/decisions'
+require_relative 'hathi_print_holdings/assess/bib'
+require_relative '../ext/sierra_postgres_utilities/sierra_item.rb'
+require_relative '../../sierra-postgres-utilities/lib/sierra_postgres_utilities.rb'

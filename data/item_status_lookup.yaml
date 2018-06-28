@@ -1,0 +1,77 @@
+---
+"":  
+  val: CH
+  desc: Blank, assumed available
+" ": 
+  val: CH
+  desc: Blank, assumed available
+"!": 
+  val: CH
+  desc: ON HOLDSHELF
+"$": 
+  val: LM
+  desc: LOST AND PAID
+"%": 
+  val: CH
+  desc: ILL/INN-Reach
+"-": 
+  val: CH
+  desc: AVAILABLE
+a:   
+  val: CH
+  desc: CONTACT MRC TO RESERVE
+b:   
+  val: CH
+  desc: BACKLOGGED
+c:   
+  val: LM
+  desc: CLAIMS LOST
+d:   
+  val: LM
+  desc: DECLARED LOST
+e:   
+  val: CH
+  desc: IN PROCESS AT LSC
+f:   
+  val: LM
+  desc: NEVER RECEIVED
+g:   
+  val: CH
+  desc: ASK MRC
+j:   
+  val: CH
+  desc: CONTACT LIB FOR STATUS # LAFL lib
+m:   
+  val: LM
+  desc: MISSING
+n:   
+  val: LM
+  desc: BILLED
+o:   
+  val: CH
+  desc: LIB USE ONLY
+p:   
+  val: CH
+  desc: IN PROCESS
+r:   
+  val: CH
+  desc: IN REPAIR
+s:   
+  val: LM
+  desc: ON SEARCH
+t:   
+  val: CH
+  desc: IN TRANSIT
+u:   
+  val: CH
+  desc: STAFF USE ONLY
+v:   
+  val: CH
+  desc: AT BINDERY
+w:   
+  val: WD
+  desc: WITHDRAWN
+z:   
+  val: LM
+  desc: CLMS RETD
+...
