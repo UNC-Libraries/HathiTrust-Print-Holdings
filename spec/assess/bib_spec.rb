@@ -2,7 +2,7 @@ require_relative '../../lib/hathi_print_holdings.rb'
 
 
 class HathiPrintHoldings::Assess::Bib
-  attr_reader :exclude_message
+  attr_reader :exclude_message, :bib
 end
 
 class SierraBib
@@ -70,7 +70,7 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
 
       it 'sets exclude message' do
         bib.set_varfield_data([marc_tag: '915', field_content: 'browse'])
-        message = ['b1000001', nil, 'Ineligible based on 915 value', 'browse']
+        message = ['b1000001', nil, 'Ineligible based on 915 value', '|abrowse']
         ht.ineligible_915?
         expect(ht.exclude_message).to eq(message)
       end
@@ -104,7 +104,7 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
 
       it 'sets exclude message' do
         bib.set_varfield_data([marc_tag: '919', field_content: 'dwsgpo'])
-        message = ['b1000001', nil, 'Ineligible based on 919 value', 'dwsgpo']
+        message = ['b1000001', nil, 'Ineligible based on 919 value', '|adwsgpo']
         ht.ineligible_919?
         expect(ht.exclude_message).to eq(message)
       end
@@ -127,12 +127,12 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
   describe '#archival_control?' do
     context 'bib control type is "a"' do
       it 'returns true' do
-        bib.set_ldr(control_type_code: 'a')
+        ht.bib.set_ldr(control_type_code: 'a')
         expect(ht.archival_control?).to be true
       end
 
       it 'sets exclude message' do
-        bib.set_ldr(control_type_code: 'a')
+        ht.bib.set_ldr(control_type_code: 'a')
         message = ['b1000001', nil, 'Archival control', nil]
         ht.archival_control?
         expect(ht.exclude_message).to eq(message)
@@ -141,17 +141,17 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
 
     context 'bib control type is not "a"' do
       it 'returns false' do
-        bib.set_ldr(control_type_code: 'b')
+        ht.bib.set_ldr(control_type_code: 'b')
         expect(ht.archival_control?).to be false
       end
 
       it 'considers control type = nil to be "not a"' do
-        bib.set_ldr({})
+        ht.bib.set_ldr({})
         expect(ht.archival_control?).to be false
       end
 
       it 'does not set exclude message' do
-        bib.set_ldr(control_type_code: 'b')
+        ht.bib.set_ldr(control_type_code: 'b')
         ht.archival_control?
         expect(ht.exclude_message).to be_nil
       end
@@ -211,7 +211,7 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
     #
   end
 
-  describe '#ineligible_300a_terms?' do
+  describe '#no_eligible_300a?' do
     terms = %w[box item pamphlet piece sheet]
     terms.each do |term|
       context "when 300a includes '#{term}'" do
@@ -219,14 +219,14 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
           bib.set_varfield_data(
             [marc_tag: '300', field_content: "|a blah #{term}"]
           )
-          expect(ht.ineligible_300a_terms?).to be true
+          expect(ht.no_eligible_300a?).to be true
         end
 
         it 'detection is case insensitive' do
           bib.set_varfield_data(
             [marc_tag: '300', field_content: "|a blah #{term.upcase}"]
           )
-          expect(ht.ineligible_300a_terms?).to be true
+          expect(ht.no_eligible_300a?).to be true
         end
 
         it 'sets exclude message' do
@@ -234,7 +234,7 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
             [marc_tag: '300', field_content: "|a blah #{term}"]
           )
           message = ['b1000001', nil, 'Physical description', " blah #{term}"]
-          ht.ineligible_300a_terms?
+          ht.no_eligible_300a?
           expect(ht.exclude_message).to eq(message)
         end
 
@@ -242,7 +242,7 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
           bib.set_varfield_data(
             [marc_tag: '300', field_content: "|a blah #{term}"]
           )
-          ht.ineligible_300a_terms?
+          ht.no_eligible_300a?
           expect(ht.exclude_message.last).to eq(" blah #{term}")
         end
       end
@@ -252,7 +252,7 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
           bib.set_varfield_data(
             [marc_tag: '300', field_content: "|afine |b blah #{term}"]
           )
-          expect(ht.ineligible_300a_terms?).to be false
+          expect(ht.no_eligible_300a?).to be false
         end
       end
     end
@@ -260,12 +260,12 @@ RSpec.describe HathiPrintHoldings::Assess::Bib do
     context "when no 338 includes terms" do
       it 'returns false' do
         bib.set_varfield_data([marc_tag: '300', field_content: '|aeligible'])
-        expect(ht.ineligible_300a_terms?).to be false
+        expect(ht.no_eligible_300a?).to be false
       end
 
       it 'does not set exclude message' do
         bib.set_varfield_data([marc_tag: '300', field_content: '|aeligible'])
-        ht.ineligible_300a_terms?
+        ht.no_eligible_300a?
         expect(ht.exclude_message).to be_nil
       end
     end
